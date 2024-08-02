@@ -1,6 +1,8 @@
+file_name := example
+
 all:
-	./../asm64 example
+	./../asm64 $(file_name)
 
 clean:
-	rm -v example.lst example.o example
+	rm -v $(file_name).lst $(file_name).o $(file_name)
 
