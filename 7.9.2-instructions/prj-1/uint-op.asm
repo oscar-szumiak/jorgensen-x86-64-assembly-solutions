@@ -33,7 +33,6 @@ bNum2		db		6
 bNum3		db		5
 bNum4		db		2
 
-
 bAns1		db		0
 bAns2		db		0
 bAns3		db		0
@@ -137,3 +136,4 @@ last:
     mov rax, SYS_exit
     mov rdi, SUCCESS
     syscall
+
