@@ -1,6 +1,8 @@
-;  Simple example program to compute the
-;  sum of squares from 1 to n.
-; **********************************************
+; Implement the example program to compute the sum of squares from 1 to n.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results in both decimal
+; and hexadecimal.
+
 ;  Data declarations
 
 section .data
