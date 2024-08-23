@@ -27,17 +27,14 @@ global _start
 _start:
 
 ; -----
-;  Compute sum of squares from 1 to n (inclusive).
-;  Approach:
-;   for (i=1; i<=n; i++)
-;       sum += i;
+; sum = n * (n + 1) / 2
 
-    mov rbx, 1                      ; i
-    mov ecx, dword [n]
-sumLoop:
-    add dword [sum], ebx
-    inc rbx
-    loop sumLoop
+    mov eax, dword [n]
+    add eax, 1
+    mul dword [n]
+    mov ebx, 2
+    div ebx
+    mov dword [sum], eax
 
 ; -----
 ; squareOfSum = sum * sum
