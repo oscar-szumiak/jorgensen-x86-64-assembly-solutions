@@ -10,16 +10,16 @@ set logging overwrite
 set logging on
 set prompt
 echo Sum: \n
-x/dw &sum
+x/uw &sum
 x/xw &sum
 echo Min: \n
-x/dw &min
+x/uw &min
 x/xw &min
 echo Max: \n
-x/dw &max
+x/uw &max
 x/xw &max
 echo Avg: \n
-x/dw &avg
+x/uw &avg
 x/xw &avg
 echo \n\n
 set logging off

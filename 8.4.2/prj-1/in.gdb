@@ -10,7 +10,7 @@ set logging overwrite
 set logging on
 set prompt
 echo Sum: \n
-x/dw &sum
+x/uw &sum
 x/xw &sum
 echo \n\n
 set logging off

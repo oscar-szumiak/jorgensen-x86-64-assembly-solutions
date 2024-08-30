@@ -10,28 +10,28 @@ set logging overwrite
 set logging on
 set prompt
 echo taMin: \n
-x/dw &taMin
+x/uw &taMin
 x/xw &taMin
 echo taMax  \n
-x/dw &taMax 
+x/uw &taMax 
 x/xw &taMax 
 echo taSum  \n
-x/dw &taSum 
+x/uw &taSum 
 x/xw &taSum 
 echo taAve  \n
-x/dw &taAve 
+x/uw &taAve 
 x/xw &taAve 
 echo volMin \n
-x/dw &volMin
+x/uw &volMin
 x/xw &volMin
 echo volMax \n
-x/dw &volMax
+x/uw &volMax
 x/xw &volMax
 echo volSum \n
-x/dw &volSum
+x/uw &volSum
 x/xw &volSum
 echo volAve \n
-x/dw &volAve
+x/uw &volAve
 x/xw &volAve
 echo \n\n
 set logging off
