@@ -41,7 +41,7 @@ section .text
 global _start
 _start:
 
-; Loop to put numbers on stack.
+; Loop to put characters on stack
 
     mov     ecx, dword [len]
     mov     rbx, string
