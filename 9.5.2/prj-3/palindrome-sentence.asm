@@ -49,7 +49,6 @@ pushLoop:
 popLoop:
     pop     rax
     mov     dl, byte [rbx+r12]
-    ;inc     r12
     
 ; Check if comparison is valid
 ; Both character values in the ranges 65-90 or 97-122
