@@ -1,4 +1,4 @@
-file_name := signed-int-to-string
+file_name := int-to-string
 
 all:
 	./../../asm64 $(file_name)
