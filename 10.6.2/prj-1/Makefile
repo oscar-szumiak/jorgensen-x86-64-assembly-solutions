@@ -1,4 +1,4 @@
-file_name := int-to-string
+file_name := uint-to-string
 
 all:
 	./../../asm64 $(file_name)
