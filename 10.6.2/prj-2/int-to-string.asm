@@ -39,15 +39,16 @@ _start:
     mov     eax, dword [intNum]             ; get integer
     mov     rbp, strNum                     ; get addr of string
     mov     rdi, 0                          ; idx = 0
+    mov     byte [rbp+rdi], "+"
     
     cmp     dword [intNum], 0
     jg      positive
     
     imul    eax, -1
-    mov     byte [rbp+rdi], 45
-    add     rdi, 1
+    mov     byte [rbp+rdi], "-"
 
 positive:
+    add     rdi, 1
     mov     rcx, 0                          ; digitCount = 0
     mov     ebx, 10                         ; set for dividing by 10
 divideLoop:
