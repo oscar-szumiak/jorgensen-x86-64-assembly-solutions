@@ -81,36 +81,38 @@ fileRead:
     push    rbp
     mov     rbp, rsp
     push    r12
+    push    r13
+    push    r14
+    push    r15
 
-    mov     r8, rdi             ; Save file name string address
-    mov     r9, rsi             ; Save output string address
-    mov     r10, rdx            ; Save maximum length of password string
-    mov     r11, rcx            ; Save address of output string length
+    mov     r12, rsi            ; Save output string address
+    mov     r13, rdx            ; Save maximum length of password string
+    mov     r14, rcx            ; Save address of output string length
 
     mov     rax, SYS_open       ; Open file
-    mov     rdi, r8
+    mov     rdi, rdi
     mov     rsi, O_RDONLY
     syscall
 
     cmp     rax, 0
     jl      openError
 
-    mov     r12, rax            ; Save file descriptor
+    mov     r15, rax            ; Save file descriptor
 
     mov     rax, SYS_read       ; Read from file
-    mov     rdi, r12
-    mov     rsi, r9
-    mov     rdx, r10
+    mov     rdi, r15
+    mov     rsi, r12
+    mov     rdx, r13
     dec     rdx
     syscall
-   
+
     cmp     rax, 0
     jl      readError
 
-    mov     qword [r11], rax    ; Save length of read string
+    mov     qword [r14], rax    ; Save length of read string
 
     mov     rax, SYS_close      ; Close file
-    mov     rdi, r12
+    mov     rdi, r15
     syscall
    
     mov     rax, SUCCESS
@@ -122,6 +124,9 @@ readError:
 
 readSuccess:
 
+    pop    r15
+    pop    r14
+    pop    r13
     pop    r12
     pop    rbp
     ret
