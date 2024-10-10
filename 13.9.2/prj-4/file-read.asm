@@ -66,15 +66,15 @@ readLength      resq    1
 
 section     .text
 
-; fileRead(string, file)
+; fileRead(file_name, read_buffer, buffer_size, read_size)
 ; Arguments:
 ; 1) address, file name
-; 2) address, output string
+; 2) address, read buffer
 ; 3) value, maximum length of the password string
 ; 4) address, where to store the password length
 ; Returns:
 ; SUCCESS - if succesful
-; NOSUCCESS - if not able to create or write to file
+; NOSUCCESS - if not able to read from file
 
 global fileRead
 fileRead:
