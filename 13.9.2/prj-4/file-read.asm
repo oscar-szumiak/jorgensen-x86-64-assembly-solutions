@@ -90,7 +90,6 @@ fileRead:
     mov     r14, rcx            ; Save address of output string length
 
     mov     rax, SYS_open       ; Open file
-    mov     rdi, rdi
     mov     rsi, O_RDONLY
     syscall
 
