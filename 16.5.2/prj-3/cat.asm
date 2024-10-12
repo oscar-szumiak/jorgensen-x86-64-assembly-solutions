@@ -36,7 +36,7 @@ BUFFER_SIZE         equ     256
 
 
 argCountError           db      "Incorrect number of arguments given", LF, NULL
-argCountErrorLength     dq      36
+argCountErrorLength     dq      37
 
 fileOpenError           db      "Failed to open file", LF, NULL
 fileOpenErrorLength     dq      21
@@ -59,12 +59,12 @@ global _start
 _start:
     
     mov     r12, qword [rsp]        ; argc
-    lea     r13, [rsp+8]            ; argv
+    lea     r13, byte [rsp+8]      ; argv
 
     cmp     r12, 2
     jne     argumentError
 
-    lea     rdi, byte [r13+8]
+    mov     rdi, qword [r13+8]
     lea     rsi, byte [read_buffer]
     mov     rdx, BUFFER_SIZE
     lea     rcx, qword [read_size]
@@ -85,7 +85,7 @@ argumentError:
     mov     rax, SYS_write
     mov     rdi, STDOUT
     mov     rsi, argCountError
-    mov     rdx, argCountErrorLength
+    mov     rdx, qword [argCountErrorLength]
     syscall
 
     jmp     exitFailure
@@ -97,7 +97,7 @@ readError:
     mov     rax, SYS_write
     mov     rdi, STDOUT
     mov     rsi, fileReadError
-    mov     rdx, fileReadErrorLength
+    mov     rdx, qword [fileReadErrorLength]
     syscall
     
     jmp     exitFailure
@@ -106,7 +106,7 @@ openError:
     mov     rax, SYS_write
     mov     rdi, STDOUT
     mov     rsi, fileOpenError
-    mov     rdx, fileOpenErrorLength
+    mov     rdx, qword [fileOpenErrorLength]
     syscall
     
     jmp     exitFailure
@@ -145,7 +145,6 @@ fileRead:
     mov     r14, rcx            ; Save address of output read size
 
     mov     rax, SYS_open       ; Open file
-    mov     rdi, rdi
     mov     rsi, O_RDONLY
     syscall
 
