@@ -36,7 +36,10 @@ BUFFER_SIZE         equ     256
 
 
 msgArgCountError           db      "Incorrect number of arguments given", LF, NULL
-msgArgCountErrorLength     dq      37
+msgArgCountErrorLength     dq      36
+
+newLine         db      LF, NULL
+newLineLength   dq      1
 
 
 section     .text
@@ -66,6 +69,12 @@ printLoop:
     mov     rsi, qword [r13+r14*8]
     syscall
 
+    mov     rax, SYS_write
+    mov     rdi, STDOUT
+    lea     rsi, byte [newLine]
+    mov     rdx, qword [newLineLength]
+    syscall
+
     inc     r14
     cmp     r14, 4
     jb      printLoop
@@ -73,33 +82,39 @@ printLoop:
     mov     r14, 1
 valueConversionLoop:
     mov     rdi, qword [r13+r14*8]
-    lea     rsi, qword [rbp+(r14-1)*8]
+    lea     rsi, qword [rbp-32+(r14-1)*8]
     call    asciiToInt
     inc     r14
     cmp     r14, 4
     jb      valueConversionLoop
 
-    mov     r14, 0
+    mov     r14, 1
 sumLoop:
-    mov     rax, qword [rbp+r14*8]
-    add     qword [rbp+32], rax
+    mov     rax, qword [rbp-32+(r14-1)*8]
+    add     qword [rbp-8], rax
     inc     r14
-    cmp     r14, 3
+    cmp     r14, 4
     jb      sumLoop
 
-    mov     rdi, qword [rbp+32]
-    lea     rsi, byte [rbp+32+BUFFER_SIZE]
+    mov     rdi, qword [rbp-8]
+    lea     rsi, byte [rbp-32-BUFFER_SIZE]
     mov     rdx, BUFFER_SIZE
     call    intToAscii
 
-    lea     rdi, byte [rbp+32+BUFFER_SIZE]
+    lea     rdi, byte [rbp-32-BUFFER_SIZE]
     mov     rsi, BUFFER_SIZE
     call    strLen
 
     mov     rdx, rax
     mov     rax, SYS_write
     mov     rdi, STDOUT
-    lea     rsi, byte [rbp+32+BUFFER_SIZE]
+    lea     rsi, byte [rbp-32-BUFFER_SIZE]
+    syscall
+
+    mov     rax, SYS_write
+    mov     rdi, STDOUT
+    lea     rsi, byte [newLine]
+    mov     rdx, qword [newLineLength]
     syscall
 
     jmp     exitSuccess
@@ -264,20 +279,18 @@ intToAscii:
     mov     r9, rdx                         ; output buffer size
 
     mov     rdi, 0                          ; idx = 0
-    mov     byte [r8+rdi], "+"
-    
     cmp     rax, 0
-    jg      positive
+    jge     positive
     
     imul    rax, -1
     mov     byte [r8+rdi], "-"
+    inc     rdi
 
 positive:
-    inc     rdi
     mov     rcx, 0                          ; digitCount = 0
     mov     rbx, 10                         ; set for dividing by 10
 divideLoop:
-    cdq
+    cqo
     idiv    rbx                             ; divide number by 10
 
     push    rdx                             ; push remainder
