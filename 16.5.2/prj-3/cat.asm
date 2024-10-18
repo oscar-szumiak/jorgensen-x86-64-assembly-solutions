@@ -32,11 +32,17 @@ EXIT_FAILURE        equ     1
 
 O_RDONLY            equ     000000q
 
+PATH_MAX            equ     4096
+NAME_MAX            equ     255
+
 BUFFER_SIZE         equ     256
 
 
 argCountError           db      "Incorrect number of arguments given", LF, NULL
 argCountErrorLength     dq      37
+
+pathLengthError         db      "Maximum path length exceeded", LF, NULL
+pathLengthErrorLength   dq      30
 
 fileOpenError           db      "Failed to open file", LF, NULL
 fileOpenErrorLength     dq      21
@@ -59,10 +65,22 @@ global _start
 _start:
     
     mov     r12, qword [rsp]        ; argc
-    lea     r13, byte [rsp+8]      ; argv
+    lea     r13, byte [rsp+8]       ; argv
 
     cmp     r12, 2
     jne     argumentError
+
+    mov     rcx, 0
+    mov     r14, qword [r13+8]
+checkPathLengthLoop:
+    cmp     byte [r14+rcx], NULL
+    je      exitCheckPathLengthLoop
+    inc     rcx
+    jmp     checkPathLengthLoop
+
+exitCheckPathLengthLoop:
+    cmp     rcx, PATH_MAX
+    ja      pathError
 
     mov     rdi, qword [r13+8]
     lea     rsi, byte [read_buffer]
@@ -86,6 +104,15 @@ argumentError:
     mov     rdi, STDOUT
     mov     rsi, argCountError
     mov     rdx, qword [argCountErrorLength]
+    syscall
+
+    jmp     exitFailure
+
+pathError:
+    mov     rax, SYS_write
+    mov     rdi, STDOUT
+    mov     rsi, pathLengthError
+    mov     rdx, qword [pathLengthErrorLength]
     syscall
 
     jmp     exitFailure
