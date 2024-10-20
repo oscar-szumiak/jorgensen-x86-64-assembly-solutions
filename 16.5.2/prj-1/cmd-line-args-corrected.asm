@@ -11,10 +11,10 @@ section     .data
 ; -----
 ; Define standard constants.
 
-LF                  equ     10
-NULL                equ     0 
-TRUE                equ     1       ; line feed
-FALSE               equ     0       ; end of string
+LF                  equ     10      ; line feed
+NULL                equ     0       ; end of string
+TRUE                equ     1
+FALSE               equ     0
 EXIT_SUCCESS        equ     0       ; success code
 STDIN               equ     0       ; standard input
 STDOUT              equ     1       ; standard output
