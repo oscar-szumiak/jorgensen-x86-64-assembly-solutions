@@ -65,7 +65,7 @@ global _start
 _start:
     
     mov     r12, qword [rsp]        ; argc
-    lea     r13, byte [rsp+8]       ; argv
+    lea     r13, qword [rsp+8]      ; argv
 
     cmp     r12, 2
     jne     argumentError
