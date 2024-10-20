@@ -84,21 +84,24 @@ myGetLine:
     push    r12
     push    r13
     push    r14
+    push    r15
 
-    mov     r12, rdi
-    mov     r13, rsi
-    mov     r14, rdx
+    mov     r12, rdi                            ; file descriptor
+    mov     r13, rsi                            ; lineBuffer
+    mov     r14, rdx                            ; lineBufferSize
 
-    mov     rcx, 0
+    mov     r15, 0                              ; lineBuffer index
 fillBuffer:
     mov     rax, qword [bufferMaximum]
     cmp     qword [currentIndex], rax
     jb      getChar
+
     mov     rax, SYS_read
     mov     rdi, r12
     mov     rsi, readBuffer
     mov     rdx, READ_BUFFER_SIZE
     syscall
+
     cmp     rax, 0
     jge     checkRead
     jmp     readError
@@ -114,12 +117,12 @@ resetPointers:
     mov     qword [bufferMaximum], rax
 
 getChar:
-    cmp     rcx, r14
+    cmp     r15, r14
     je      lineBufferError
     mov     r10, qword [currentIndex]
     mov     al, byte [readBuffer+r10]
-    mov     byte [r13+rcx], al
-    inc     rcx
+    mov     byte [r13+r15], al
+    inc     r15
     inc     qword [currentIndex]
     cmp     al, LF
     je      getLineSuccess
@@ -143,6 +146,7 @@ getLineFailure:
     mov     rax, FALSE
 
 getLineExit:
+    pop     r15
     pop     r14
     pop     r13
     pop     r12
