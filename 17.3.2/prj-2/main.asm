@@ -47,16 +47,16 @@ extern myGetLine
 
 global _start
 _start:
-    mov     r12, qword [rsp]        ; argc
-    lea     r13, qword [rsp+8]      ; argv
+    mov     r12, qword [rsp]                ; argc
+    lea     r13, qword [rsp+8]              ; argv
 
     cmp     r12, 2
     jne     argumentError
 
-    mov     rax, SYS_open           ; Open file
+    mov     rax, SYS_open
     mov     rdi, qword [r13+8]
     mov     rsi, O_RDONLY
-    syscall
+    syscall                                 ; Open file
 
     cmp     rax, 0
     jl      openError
@@ -67,13 +67,13 @@ getLineLoop:
     mov     rdi, r14
     mov     rsi, lineBuffer
     mov     rdx, LINE_BUFFER_SIZE
-    call    myGetLine
+    call    myGetLine                       ; Get next line from file
 
     cmp     rax, FALSE
     je      closeFile
 
     mov     rcx, 1
-getLengthLoop:
+getLengthLoop:                              ; Get line length
     cmp     byte [lineBuffer+rcx-1], LF
     je      printLine
     inc     rcx
@@ -84,14 +84,14 @@ printLine:
     mov     rdi, STDOUT
     mov     rsi, lineBuffer
     mov     rdx, rcx
-    syscall
+    syscall                                 ; Print line
 
     jmp     getLineLoop
 
 closeFile:
-    mov     rax, SYS_close          ; Close file
+    mov     rax, SYS_close
     mov     rdi, r14
-    syscall
+    syscall                                 ; Close file
 
     jmp     exitSuccess
 

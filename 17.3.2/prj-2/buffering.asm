@@ -93,20 +93,20 @@ myGetLine:
     mov     r15, 0                              ; lineBuffer index
 fillBuffer:
     mov     rax, qword [bufferMaximum]
-    cmp     qword [currentIndex], rax
+    cmp     qword [currentIndex], rax           ; check if end of readBuffer
     jb      getChar
 
     mov     rax, SYS_read
     mov     rdi, r12
     mov     rsi, readBuffer
     mov     rdx, READ_BUFFER_SIZE
-    syscall
+    syscall                                     ; fill readBuffer
 
     cmp     rax, 0
     jge     checkRead
     jmp     readError
 
-checkRead:
+checkRead:                                      ; check size of read
     cmp     rax, READ_BUFFER_SIZE
     je      resetPointers
     mov     qword [eofFlag], TRUE
@@ -121,7 +121,7 @@ getChar:
     je      lineBufferError
     mov     r10, qword [currentIndex]
     mov     al, byte [readBuffer+r10]
-    mov     byte [r13+r15], al
+    mov     byte [r13+r15], al                  ; add char to lineBuffer
     inc     r15
     inc     qword [currentIndex]
     cmp     al, LF
