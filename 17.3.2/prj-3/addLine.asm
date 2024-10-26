@@ -52,7 +52,7 @@ inputFileOpenErrorLength    dq      27
 outputFileCreationError           db      "Failed to create output file", LF, NULL
 outputfileCreationErrorLength     dq      30
 
-LINE_NUMBER_BUFFER_SIZE     equ     20
+LINE_NUMBER_BUFFER_SIZE     equ     5
 LINE_BUFFER_SIZE            equ     1024
 
 
@@ -96,7 +96,7 @@ _start:
 
     mov     r15, rax                        ; Save output file descriptor
 
-    mov     r13d, 0
+    mov     r13, 0
     mov     r13d, 0                         ; Line number
 getLineLoop:
     mov     rdi, r14
@@ -107,13 +107,13 @@ getLineLoop:
     cmp     rax, FALSE
     je      closeFiles
 
-    inc     r13
+    inc     r13d
 
-    mov     rcx, 1
+    mov     rbx, 1
 getLengthLoop:                              ; Get line length
-    cmp     byte [lineBuffer+rcx-1], LF
+    cmp     byte [lineBuffer+rbx-1], LF
     je      writeLine
-    inc     rcx
+    inc     rbx
     jmp     getLengthLoop
     
 writeLine:
@@ -125,13 +125,13 @@ writeLine:
     mov     rax, SYS_write
     mov     rdi, r15
     mov     rsi, lineNumberBuffer
-    mov     rdx, LINE_NUMBER_BUFFER_SIZE
+    mov     rdx, LINE_NUMBER_BUFFER_SIZE-1
     syscall                                 ; Write line number to output file
 
     mov     rax, SYS_write
     mov     rdi, r15
     mov     rsi, lineBuffer
-    mov     rdx, rcx
+    mov     rdx, rbx
     syscall                                 ; Write line to output file
 
     jmp     getLineLoop
@@ -193,7 +193,7 @@ programExit:
 
 global intToAscii
 intToAscii:
-
+    push    rbx
     push    rbp                             ; prologue
     mov     rbp, rsp
 ; -----
@@ -257,5 +257,6 @@ clearLoop:
     jne     clearLoop
 
     pop     rbp                             ; epilogue
+    pop     rbx
     ret
 
