@@ -52,7 +52,7 @@ inputFileOpenErrorLength    dq      27
 outputFileCreationError           db      "Failed to create output file", LF, NULL
 outputfileCreationErrorLength     dq      30
 
-LINE_NUMBER_BUFFER_SIZE     equ     5
+LINE_NUMBER_BUFFER_SIZE     equ     4
 LINE_BUFFER_SIZE            equ     1024
 
 
@@ -96,8 +96,7 @@ _start:
 
     mov     r15, rax                        ; Save output file descriptor
 
-    mov     r13, 0
-    mov     r13d, 0                         ; Line number
+    mov     r13, 0                          ; Line number
 getLineLoop:
     mov     rdi, r14
     mov     rsi, lineBuffer
@@ -107,7 +106,7 @@ getLineLoop:
     cmp     rax, FALSE
     je      closeFiles
 
-    inc     r13d
+    inc     r13
 
     mov     rbx, 1
 getLengthLoop:                              ; Get line length
@@ -117,15 +116,15 @@ getLengthLoop:                              ; Get line length
     jmp     getLengthLoop
     
 writeLine:
-    mov     edi, r13d
+    mov     rdi, r13
     mov     rsi, lineNumberBuffer
     mov     rdx, LINE_NUMBER_BUFFER_SIZE
-    call    intToAscii                      ; Convert line number to string
+    call    uintToAscii                     ; Convert line number to string
 
     mov     rax, SYS_write
     mov     rdi, r15
     mov     rsi, lineNumberBuffer
-    mov     rdx, LINE_NUMBER_BUFFER_SIZE-1
+    mov     rdx, LINE_NUMBER_BUFFER_SIZE
     syscall                                 ; Write line number to output file
 
     mov     rax, SYS_write
@@ -184,46 +183,37 @@ programExit:
     syscall
 
 
-; Convert a signed integer to an ASCII string
-; intToAscii(number, string, maxlen)
+; Convert a unsigned integer to an ASCII string
+; uintToAscii(number, string, maxLen, maxWidth)
 ; Arguments:
-;   number, dword value – edi
-;   string, address – rsi
-;   maxlen, qword value – rdx
+;   rdi - number, dword value
+;   rsi - string, address
+;   rdx - maxLen, qword value
 
-global intToAscii
-intToAscii:
+global uintToAscii
+uintToAscii:
     push    rbx
     push    rbp                             ; prologue
     mov     rbp, rsp
-; -----
-; Part A - Successive division
 
-    mov     eax, edi                        ; get integer
+    mov     rax, rdi                        ; get integer
     mov     r8, rsi                         ; get addr of string
     mov     r9, rdx                         ; get maxlen
 
-    mov     rdi, 0                          ; idx = 0
-    mov     byte [r8+rdi], "+"
-    
-    cmp     eax, 0
-    jg      positive
-    
-    imul    eax, -1
-    mov     byte [r8+rdi], "-"
+; -----
+; Part A - Successive division
 
-positive:
-    inc     rdi
+    mov     rdi, 0                          ; idx = 0
     mov     rcx, 0                          ; digitCount = 0
-    mov     ebx, 10                         ; set for dividing by 10
+    mov     rbx, 10                         ; set for dividing by 10
 divideLoop:
-    cdq
-    idiv    ebx                             ; divide number by 10
+    cqo
+    div     rbx                             ; divide number by 10
 
     push    rdx                             ; push remainder
     inc     rcx                             ; increment digitCount
 
-    cmp     eax, 0                          ; if (result != 0)
+    cmp     rax, 0                          ; if (result != 0)
     jne     divideLoop                      ; goto divideLoop
 
 ; -----
@@ -236,7 +226,7 @@ popLoop:
     inc     rdi                             ; increment idx
     loop    popLoop                         ; if (digitCount > 0)
                                             ; goto popLoop
-    mov     byte [r8+rdi], NULL             ; string[idx] = NULL
+    mov     byte [r8+rdi], " "              ; string[idx] = NULL
 
 ; -----
 ; Part C - Right justify the result
