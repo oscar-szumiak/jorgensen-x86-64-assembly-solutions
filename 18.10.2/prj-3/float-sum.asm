@@ -53,14 +53,14 @@ sumLoop:
     jmp         equal
     
 notEqual:
-    lea     rsi, byte [msg_eq]
-    mov     rdx, msg_eq_size
+    lea     rsi, byte [msg_ne]
+    mov     rdx, qword [msg_ne_size]
 
     jmp     printMsg
 
 equal:
-    lea     rsi, byte [msg_ne]
-    mov     rdx, msg_ne_size
+    lea     rsi, byte [msg_eq]
+    mov     rdx, qword [msg_eq_size]
     
 printMsg:
     syscall
@@ -69,3 +69,4 @@ last:
     mov rax, SYS_exit
     mov rbx, SUCCESS
     syscall
+
