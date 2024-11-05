@@ -7,20 +7,24 @@
 
 section     .data
 
-SYS_exit        equ     60              ; system call code for terminate
-SYS_write       equ     1               ; write
+SYS_exit        equ     60
+SYS_write       equ     1
 
-EXIT_SUCCESS    equ     0               ; Successful operation
-NULL            equ     0
-LF              equ     10
+EXIT_SUCCESS    equ     0
+EXIT_FAILURE    equ     1
+
+STDOUT          equ     1
 STDERR          equ     2
+
+LF              equ     10
+NULL            equ     0
 
 hexValues       db      "0123456789ABCDEF", NULL
 
 
 section     .bss
 
-BUFFER_SIZE     equ     30
+BUFFER_SIZE     equ     40
 
 idt_data        resb    10              ; 2 (size) + 8 (start address of IDT)
 hexBuffer       resb    BUFFER_SIZE
@@ -28,35 +32,46 @@ hexBuffer       resb    BUFFER_SIZE
 
 section     .text
 
-
 global _start
 _start:
     sidt    byte [idt_data]
 
-    mov     rcx, 0
-    mov     rbx, qword [idt_data+2]
+    mov     r12, 0
+    mov     r13, qword [idt_data+2]
 printLoop:
-    lea     rdi, byte [rbx+rcx*16]
+    mov     rax, r12
+    mov     rdi, 16
+    mul     rdi
+    add     rax, r13
+    mov     rdi, rax                        ; lea   rdi, byte [r13+r12*16]
+
     mov     rsi, 16
     lea     rdx, byte [hexBuffer]
     mov     rcx, BUFFER_SIZE-1
     call    intToHex                        ; Get hex representation of data
 
-    mov     r12, rax
-    mov     byte [hexBuffer+r12], LF        ; Add newline
+    mov     rdi, EXIT_FAILURE
+    cmp     rax, 0
+    jle     last
+
+    mov     r14, rax
+    mov     byte [hexBuffer+r14], LF        ; Add newline
 
     mov     rax, SYS_write
     mov     rdi, STDERR
     lea     rsi, byte [hexBuffer]
-    mov     rdx, r12
+    mov     rdx, r14
     syscall                                 ; Print hex representation of data
 
-    cmp     ecx, word [idt_data]
+    inc     r12
+
+    cmp     r12w, word [idt_data]
     jb      printLoop
+    
+    mov     rdi, EXIT_SUCCESS
 
 last:
     mov     rax, SYS_exit
-    mov     rbx, EXIT_SUCCESS               ; exit w/success
     syscall
 
 
@@ -74,15 +89,15 @@ last:
 ;   On success:
 ;       Size of hex string
 ;   On failure:
-;        0 - size of data is equal to zero
-;       -1 - hexBuffer size is too small
+;       -1 - size of data is equal to zero
+;       -2 - hexBuffer size is too small
 
 global intToHex
 intToHex:
     cmp     rsi, 0                  ; Check if size of data is zero 
     jne     checkBuffer
     
-    mov     rax, 0
+    mov     rax, -1
     ret
 
 checkBuffer:
@@ -92,7 +107,7 @@ checkBuffer:
     cmp     rcx, rax                ; and check against hexBuffer size
     jae     convert
 
-    mov     rax, -1
+    mov     rax, -2
     ret
 
 convert:
@@ -113,14 +128,14 @@ convert:
 hexLoop:
     mov     al, byte [r12+rcx]
     shr     al, 4                           ; Get upper 4 bits
-    mov     r10d, byte [hexValues+rax]
-    mov     byte [r14+r11], r10d
+    mov     r10b, byte [hexValues+rax]
+    mov     byte [r14+r11], r10b
     inc     r11
     
     mov     al, byte [r12+rcx]
     and     rax, 0x000000000000000F         ; Get lower 4 bits
-    mov     r10d, byte [hexValues+rax]
-    mov     byte [r14+r11], r10d
+    mov     r10b, byte [hexValues+rax]
+    mov     byte [r14+r11], r10b
     inc     r11
 
     inc     rcx
