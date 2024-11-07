@@ -1,11 +1,20 @@
-file_name := idt-preview
+all: idt-preview.out test.out
 
-all:
-	./../../asm64 $(file_name)
+test.out: intToHex.o test.o
+	ld -g -o test.out test.o intToHex.o
 
-debug:
-	gdb $(file_name).out < in.gdb
+idt-preview.out: intToHex.o idt-preview.o
+	ld -g -o idt-preview.out idt-preview.o intToHex.o
+
+test.o: test.asm
+	yasm -g dwarf2 -f elf64 test.asm -l test.lst
+
+idt-preview.o: idt-preview.asm
+	yasm -g dwarf2 -f elf64 idt-preview.asm -l idt-preview.lst
+
+intToHex.o: intToHex.asm
+	yasm -g dwarf2 -f elf64 intToHex.asm -l intToHex.lst
 
 clean:
-	rm -v $(file_name).lst $(file_name).o $(file_name).out
+	rm -v *.lst *.o *.out
 

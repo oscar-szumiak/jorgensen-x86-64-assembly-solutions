@@ -1,10 +1,3 @@
-; Write a program to obtain and list the contents of the IDT.
-; This will require an integer to ASCII/Hex program in order to display
-; the applicable addresses in hex.
-; Use the debugger as necessary to debug the program.
-; When working, execute the program without the debugger to display results.
-
-
 section     .data
 
 SYS_exit        equ     60
@@ -19,12 +12,12 @@ STDERR          equ     2
 LF              equ     10
 NULL            equ     0
 
+testData        dq      0x0123456789ABCDEF
 
 section     .bss
 
 BUFFER_SIZE     equ     40
 
-idt_data        resb    10              ; 2 (size) + 8 (start address of IDT)
 hexBuffer       resb    BUFFER_SIZE
 
 
@@ -34,18 +27,8 @@ extern intToHex
 
 global _start
 _start:
-    sidt    byte [idt_data]
-
-    mov     r12, 0
-    mov     r13, qword [idt_data+2]
-printLoop:
-    mov     rax, r12
-    mov     rdi, 16
-    mul     rdi
-    add     rax, r13
-    mov     rdi, rax                        ; lea   rdi, byte [r13+r12*16]
-
-    mov     rsi, 16
+    lea     rdi, byte [testData]
+    mov     rsi, 8
     lea     rdx, byte [hexBuffer]
     mov     rcx, BUFFER_SIZE-1
     call    intToHex                        ; Get hex representation of data
@@ -63,14 +46,8 @@ printLoop:
     mov     rdx, r14
     syscall                                 ; Print hex representation of data
 
-    inc     r12
-
-    cmp     r12w, word [idt_data]
-    jb      printLoop
-    
-    mov     rdi, EXIT_SUCCESS
-
 last:
+    mov     rdi, EXIT_SUCCESS
     mov     rax, SYS_exit
     syscall
 
