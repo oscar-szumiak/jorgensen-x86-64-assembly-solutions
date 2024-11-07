@@ -39,6 +39,7 @@ _start:
 
     mov     r14, rax
     mov     byte [hexBuffer+r14], LF        ; Add newline
+    inc     r14
 
     mov     rax, SYS_write
     mov     rdi, STDERR
