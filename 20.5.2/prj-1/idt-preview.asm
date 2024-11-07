@@ -19,6 +19,10 @@ STDERR          equ     2
 LF              equ     10
 NULL            equ     0
 
+limit           db      "Limit: ", NULL
+limitSize       dq      7
+address         db      "Base address: ", NULL
+addressSize     dq      14
 
 section     .bss
 
@@ -37,36 +41,96 @@ _start:
     sidt    byte [idt_data]
 
     mov     r12, 0
-    mov     r13, qword [idt_data+2]
-printLoop:
-    mov     rax, r12
-    mov     rdi, 16
-    mul     rdi
-    add     rax, r13
-    mov     rdi, rax                        ; lea   rdi, byte [r13+r12*16]
+    mov     r13w, word [idt_data]           ; Limit of IDT
+    mov     r14, qword [idt_data+2]         ; Base address of IDT
 
-    mov     rsi, 16
+    mov     rax, SYS_write
+    mov     rdi, STDERR
+    lea     rsi, byte [limit]
+    mov     rdx, qword [limitSize]
+    syscall                                 ; Print limit message
+
+    lea     rdi, byte [idt_data]
+    mov     rsi, 2
     lea     rdx, byte [hexBuffer]
     mov     rcx, BUFFER_SIZE-1
-    call    intToHex                        ; Get hex representation of data
+    call    intToHex                        ; Get hex representation of limit
 
     mov     rdi, EXIT_FAILURE
     cmp     rax, 0
     jle     last
 
-    mov     r14, rax
-    mov     byte [hexBuffer+r14], LF        ; Add newline
+    mov     r15, rax
+    mov     byte [hexBuffer+r15], LF        ; Add newline
+    inc     r15
 
     mov     rax, SYS_write
     mov     rdi, STDERR
     lea     rsi, byte [hexBuffer]
-    mov     rdx, r14
-    syscall                                 ; Print hex representation of data
+    mov     rdx, r15
+    syscall                                 ; Print hex representation of limit
 
-    inc     r12
+    mov     rax, SYS_write
+    mov     rdi, STDERR
+    lea     rsi, byte [address]
+    mov     rdx, qword [addressSize]
+    syscall                                 ; Print address message
 
-    cmp     r12w, word [idt_data]
-    jb      printLoop
+    lea     rdi, byte [idt_data+2]
+    mov     rsi, 8
+    lea     rdx, byte [hexBuffer]
+    mov     rcx, BUFFER_SIZE-1
+    call    intToHex                        ; Get hex representation
+                                            ; of base address
+
+    mov     rdi, EXIT_FAILURE
+    cmp     rax, 0
+    jle     last
+
+    mov     r15, rax
+    mov     byte [hexBuffer+r15], LF        ; Add newline
+    inc     r15
+
+    mov     rax, SYS_write
+    mov     rdi, STDERR
+    lea     rsi, byte [hexBuffer]
+    mov     rdx, r15
+    syscall                                 ; Print hex representation
+                                            ; of base address
+
+; Due to incorrect sidt readouts on Ubunut the following code fails to run
+
+; printLoop:
+;     mov     rax, r12
+;     mov     rdi, 16
+;     mul     rdi
+;     add     rax, r14
+;     mov     rdi, rax                        ; lea   rdi, byte [r14+r12*16]
+; 
+;     mov     rsi, 16
+;     lea     rdx, byte [hexBuffer]
+;     mov     rcx, BUFFER_SIZE-1
+;     call    intToHex                        ; Get hex representation of data
+; 
+;     mov     rdi, EXIT_FAILURE
+;     cmp     rax, 0
+;     jle     last
+; 
+;     mov     r15, rax
+;     mov     byte [hexBuffer+r15], LF        ; Add newline
+;     inc     r15
+; 
+;     mov     rax, SYS_write
+;     mov     rdi, STDERR
+;     lea     rsi, byte [hexBuffer]
+;     mov     rdx, r15
+;     syscall                                 ; Print hex representation
+;                                             ; of data
+; 
+;     inc     r12
+; 
+;     cmp     r12w, r13w
+;     jb      printLoop
     
     mov     rdi, EXIT_SUCCESS
 
