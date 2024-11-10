@@ -21,7 +21,7 @@ STDERR	        equ		2           ; standard error
 EXIT_SUCCESS	equ		0           ; success code
 SYS_exit		equ		60          ; exit
 
-STRLEN		    equ     16
+STRLEN		    equ     40
 
 prompt          db      "Enter text: ", NULL
 hexString       db      "0123456789ABCDEF", NULL
@@ -30,7 +30,7 @@ hexString       db      "0123456789ABCDEF", NULL
 section .bss
 
 chr             resb    1
-inputLine       resb    STRLEN+2    ; total of 52
+inputLine       resb    STRLEN
 rsp_value       resb    20
 
 
