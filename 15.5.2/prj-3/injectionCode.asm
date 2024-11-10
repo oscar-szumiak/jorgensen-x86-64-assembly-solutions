@@ -6,5 +6,7 @@ _start:
     push    rbx
     mov     al, 59
     mov     rdi, rsp
+    xor     rsi, rsi
+    xor     rdx, rdx
     syscall
 

