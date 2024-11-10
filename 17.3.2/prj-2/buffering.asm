@@ -53,7 +53,7 @@ section     .text
 ;   rdx - value - line buffer array size
 ; Returns:
 ;   TRUE - on full line
-;   FALSE - on read error
+;   FALSE - on read error or EOF
 ;
 ; Algorithm:
 ; myGetLine(fileDescriptor, lineBuffer, lineBufferSize) {
@@ -109,7 +109,7 @@ fillBuffer:
 checkRead:                                      ; check size of read
     cmp     rax, READ_BUFFER_SIZE
     je      resetPointers
-    mov     qword [eofFlag], TRUE
+    mov     qword [eofFlag], TRUE               ; Unused
     cmp     rax, 0
     je      zeroReadError
 resetPointers:
