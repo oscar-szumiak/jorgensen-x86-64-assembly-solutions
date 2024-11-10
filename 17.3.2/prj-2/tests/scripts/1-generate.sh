@@ -27,6 +27,8 @@ FILE_DIR="$1"
 # No newlines #
 ###############
 
+# Both should fail
+
 tr -dc '[:alnum:]' </dev/urandom | head -c 1000 > "$FILE_DIR/NL_SL"
 tr -dc '[:alnum:]' </dev/urandom | head -c 200000 > "$FILE_DIR/NL_SG"
 
@@ -36,6 +38,8 @@ tr -dc '[:alnum:]' </dev/urandom | head -c 200000 > "$FILE_DIR/NL_SG"
 #################
 
 # ( Lines < LINE_SIZE_LIMIT ) && ( File < READ_SIZE_LIMIT )
+
+# Should succeed
 
 OUTPUT_FILE="$FILE_DIR/WL_LL_SL"
 
@@ -48,6 +52,8 @@ done
 
 # ( Lines = LINE_SIZE_LIMIT ) && ( File > READ_SIZE_LIMIT )
 
+# Should succeed
+
 OUTPUT_FILE="$FILE_DIR/WL_LE_SG"
 
 true > "$OUTPUT_FILE"
@@ -58,6 +64,8 @@ for _ in $(seq 0 100); do
 done
 
 # ( Lines > LINE_SIZE_LIMIT ) && ( File > READ_SIZE_LIMIT )
+
+# Should fail
 
 OUTPUT_FILE="$FILE_DIR/WL_LG_SG"
 
