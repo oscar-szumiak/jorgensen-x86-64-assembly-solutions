@@ -16,8 +16,9 @@
 ; 12. wAns18 = dNum1 / wNum4
 ; 13. wRem18 = dNum1 % wNum4
 ; 
-; Use the debugger to execute the program and display the final results. Create a
-; debugger input file to show the results in both decimal and hexadecimal.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results in both decimal
+; and hexadecimal.
 
 section .data
 

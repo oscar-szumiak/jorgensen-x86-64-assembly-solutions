@@ -1,3 +1,11 @@
+; Type in the example program from Chapter 4, Program Format.
+; Assemble and link the program as described in Chapter 5, Tool Chain.
+; Execute the debugger as noted in this chapter. Set a breakpoint
+; at the label last and execute the program (to that breakpoint).
+; Interactively verify that the calculations performed resulted
+; in the correct values. This will require typing the appropriate debugger
+; examine memory commands (based on the variable size).
+
 ; Simple example demonstrating basic program format and layout.
 
 ; Ed Jorgensen

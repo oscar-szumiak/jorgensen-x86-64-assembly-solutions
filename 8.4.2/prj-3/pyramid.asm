@@ -1,8 +1,17 @@
+; Implement the example program to compute the lateral total surface area
+; (including the base) and volume of each square pyramid in a set of square
+; pyramids. Once the values are computed, the program finds the minimum,
+; maximum, sum, and average for the total surface areas and volumes.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results.
+
 ;  Example assembly language program to calculate the
 ;  geometric information for each square pyramid in
 ;  a series of square pyramids.
+
 ;  The program calculates the total surface area
 ;  and volume of each square pyramid.
+
 ;  Once the values are computed, the program finds
 ;  the minimum, maximum, sum, and average for the
 ;  total surface areas and volumes.

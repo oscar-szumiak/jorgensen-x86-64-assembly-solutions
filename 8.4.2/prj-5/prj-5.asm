@@ -1,3 +1,7 @@
+; Repeat the previous program using signed values and signed operations.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results.
+
 ; Write an assembly language program to find the:
 ; - minimum,
 ; - middle value,
@@ -18,13 +22,12 @@
 ; - integer average
 ; for the numbers that are evenly divisible by 3.
 ;
-; Unlike the median, the 'middle value' does not require the numbers to be sorted. 
-; Note, for an odd number of items, the middle value is defined
-; as the middle value. 
-; For an even number of values, it is the integer average of the two middle values. 
-; Assume all data is signed.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Unlike the median, the 'middle value' does not require the numbers
+; to be sorted. Note, for an odd number of items, the middle value is defined
+; as the middle value. For an even number of values, it is the integer average
+; of the two middle values. Assume all data is signed. Use the debugger
+; to execute the program and display the final results. Create a debugger
+; input file to show the results.
 
 section .data
 

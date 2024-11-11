@@ -1,6 +1,6 @@
-; Create a program to complete the following expressions using signed double-
-; word sized variables. Note, the first letter of the variable name denotes
-; the size (d → double-word and q → quadword).
+; Create a program to complete the following expressions using signed
+; double-word sized variables. Note, the first letter of the variable name
+; denotes the size (d → double-word and q → quadword).
 ; 
 ; 1.  dAns1 = dNum1 + dNum2
 ; 2.  dAns2 = dNum1 + dNum3
@@ -16,8 +16,9 @@
 ; 12. dAns18 = qNum1 / dNum4
 ; 13. dRem18 = qNum1 % dNum4
 ; 
-; Use the debugger to execute the program and display the final results. Create a
-; debugger input file to show the results in both decimal and hexadecimal.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results in both decimal
+; and hexadecimal.
 
 section .data
 

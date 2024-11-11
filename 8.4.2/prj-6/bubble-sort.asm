@@ -1,5 +1,5 @@
-; Create a program to sort a list of numbers. Use the following
-; bubble sort algorithm:
+; Create a program to sort a list of numbers. Use the following bubble sort
+; algorithm:
 ; 
 ; for ( i = (len-1) to 0 ) {
 ;     swapped = false

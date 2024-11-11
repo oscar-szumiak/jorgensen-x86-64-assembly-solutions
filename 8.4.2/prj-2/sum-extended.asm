@@ -1,7 +1,7 @@
 ; Update the example program from the previous question to find the maximum,
 ; minimum, and average for the list of numbers. Use the debugger to execute
-; the program and display the final results.
-; Create a debugger input file to show the results.
+; the program and display the final results. Create a debugger input file
+; to show the results.
 
 ; *****************************************************
 ; Data declarations

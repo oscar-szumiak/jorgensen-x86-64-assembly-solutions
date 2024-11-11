@@ -1,6 +1,6 @@
-; Implement the example program for a list average macro.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Implement the example program for a list average macro. Use the debugger
+; to execute the program and display the final results. Create a debugger
+; input file to show the results.
 
 ; Example Program to demonstrate a simple macro
 

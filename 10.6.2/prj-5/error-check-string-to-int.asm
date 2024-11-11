@@ -1,12 +1,10 @@
 ; Update the previous program to convert strings into integers to include
-; error checking on the input string.
-; Specifically, the sign must be valid and be the first character
-; in the string, each digit must be between “0” and “9”, and the string
-; NULL terminated.
-; For example, the string “-321” is valid while “1+32” and “+1R3” are both
-; invalid.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; error checking on the input string. Specifically, the sign must be valid
+; and be the first character in the string, each digit must be between
+; “0” and “9”, and the string NULL terminated. For example, the string “-321”
+; is valid while “1+32” and “+1R3” are both invalid. Use the debugger
+; to execute the program and display the final results. Create a debugger
+; input file to show the results.
 
 section .data
 

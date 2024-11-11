@@ -1,11 +1,10 @@
-; Update the example program to address signed integers.
-; This will require including a preceding sign, “+” or “-” in the string.
-; For example, -123 10 (0xFFFFFF85) would be “-123” with a NULL
-; termination (total of 5 bytes).
-; Additionally, the signed divide (IDIV, not DIV) and signed conversions
-; (e.g., CDQ) must be used.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Update the example program to address signed integers. This will require
+; including a preceding sign, “+” or “-” in the string. For example,
+; -123 10 (0xFFFFFF85) would be “-123” with a NULL termination
+; (total of 5 bytes). Additionally, the signed divide (IDIV, not DIV)
+; and signed conversions (e.g., CDQ) must be used. Use the debugger
+; to execute the program and display the final results. Create a debugger
+; input file to show the results.
 
 section .data
 

@@ -1,8 +1,7 @@
 ; Create a program to convert a string representing a numeric value into
-; an integer.
-; For example, given the NULL terminated string “41275” (a total of 6 bytes),
-; convert the string into a double-word sized integer (0x0000A13B).
-; You may assume the string and resulting integer is unsigned.
+; an integer. For example, given the NULL terminated string “41275”
+; (a total of 6 bytes), convert the string into a double-word sized integer
+; (0x0000A13B). You may assume the string and resulting integer is unsigned.
 ; Use the debugger to execute the program and display the final results.
 ; Create a debugger input file to show the results.
 

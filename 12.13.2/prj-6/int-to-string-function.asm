@@ -1,14 +1,13 @@
-; Convert the integer to ASCII macro from the previous chapter into a void
-; function. The function should convert a signed integer into a right-justified
-; string of a given length. This will require including any leading blanks,
-; a sign (“+” or “-”), the digits, and the NULL.
-; The function should accept the value for the integer and the address of where
-; to place the NULL terminated string, and the value of the maximum string
-; length - in that order.
-; Develop a main program to call the function on a series of different integers.
-; The main should include the appropriate data declarations.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Convert the integer to ASCII macro from the previous chapter into
+; a void function. The function should convert a signed integer into
+; a right-justified string of a given length. This will require including
+; any leading blanks, a sign (“+” or “-”), the digits, and the NULL.
+; The function should accept the value for the integer and the address
+; of where to place the NULL terminated string, and the value of the maximum
+; string length - in that order. Develop a main program to call the function
+; on a series of different integers. The main should include the appropriate
+; data declarations. Use the debugger to execute the program and display
+; the final results. Create a debugger input file to show the results.
 
 section .data
 

@@ -1,9 +1,9 @@
-; Update the program from the previous question to add a stats function that
-; finds the minimum, median, maximum, sum, and average for the sorted list.
-; The stats function should be called after the sort function
-; to make the minimum and maximum easier to find.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Update the program from the previous question to add a stats function
+; that finds the minimum, median, maximum, sum, and average for the sorted
+; list. The stats function should be called after the sort function to make
+; the minimum and maximum easier to find. Use the debugger to execute
+; the program and display the final results. Create a debugger input file
+; to show the results.
 
 section .data
 

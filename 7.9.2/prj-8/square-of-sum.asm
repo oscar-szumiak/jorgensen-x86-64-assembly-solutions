@@ -1,7 +1,7 @@
-; Create a program to compute the square of the sum from 1 to n. Specifically,
-; compute the sum of integers from 1 to n and then square the value. Use the
-; debugger to execute the program and display the final results.
-; Create a debugger input file to show the results in both decimal
+; Create a program to compute the square of the sum from 1 to n.
+; Specifically, compute the sum of integers from 1 to n and then square
+; the value. Use the debugger to execute the program and display the final
+; results. Create a debugger input file to show the results in both decimal
 ; and hexadecimal.
 
 ;  Data declarations

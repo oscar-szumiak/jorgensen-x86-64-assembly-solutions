@@ -1,6 +1,6 @@
 ; Create a program to compute the following expressions using unsigned byte
-; variables and unsigned operations. Note, the first letter of the variable name
-; denotes the size (b → byte and w → word).
+; variables and unsigned operations. Note, the first letter of the variable
+; name denotes the size (b → byte and w → word).
 ;
 ; 1.  bAns1 = bNum1 + bNum2
 ; 2.  bAns2 = bNum1 + bNum3
@@ -16,8 +16,9 @@
 ; 12. bAns18 = wNum1 / bNum4
 ; 13. bRem18 = wNum1 % bNum4
 ;
-; Use the debugger to execute the program and display the final results. Create a
-; debugger input file to show the results in both decimal and hexadecimal.
+; Use the debugger to execute the program and display the final results.
+; Create a debugger input file to show the results in both decimal
+; and hexadecimal.
 
 section .data
 

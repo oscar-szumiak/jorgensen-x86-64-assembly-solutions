@@ -1,6 +1,6 @@
 ; Create a program to iteratively find the nth Fibonacci number.
-; The value for n should be set as a parameter
-; (e.g., a programmer defined constant).
+; The value for n should be set as a parameter (e.g., a programmer defined
+; constant).
 ;
 ; The formula for computing Fibonacci is as follows:
 ; F(0) = 0
@@ -8,9 +8,8 @@
 ; F(n) = F(n-2) + F(n-1) for n >= 2
 ;
 ; Use the debugger to execute the program and display the final results.
-; Test the program for various values of n.
-; Create a debugger input file to show the results in both decimal
-; and hexadecimal.
+; Test the program for various values of n. Create a debugger input file
+; to show the results in both decimal and hexadecimal.
 
 ;  Data declarations
 

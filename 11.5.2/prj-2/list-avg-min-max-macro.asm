@@ -1,7 +1,6 @@
 ; Update the program from the previous question to include the minimum
-; and maximum values.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; and maximum values. Use the debugger to execute the program and display
+; the final results. Create a debugger input file to show the results.
 
 ; **************************************************
 ; Define the macro called with five arguments:

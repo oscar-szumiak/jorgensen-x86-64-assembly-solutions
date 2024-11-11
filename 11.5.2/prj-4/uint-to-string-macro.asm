@@ -1,8 +1,7 @@
-; Create a macro from the integer to ASCII conversion example
-; from the previous chapter.
-; Invoke the macro at least three times of three different data sets.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Create a macro from the integer to ASCII conversion example from
+; the previous chapter. Invoke the macro at least three times of three
+; different data sets. Use the debugger to execute the program and display
+; the final results. Create a debugger input file to show the results.
 
 ; *********************************************************
 ; Data declarations

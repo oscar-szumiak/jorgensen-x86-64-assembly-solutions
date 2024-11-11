@@ -1,10 +1,9 @@
-; Update the previous program to address strings with a preceding
-; sign (“+” or “-”).
-; This will require including a sign, “+” or “-” in the string.
-; You must ensure the final string is NULL terminated.
-; You may assume the input strings are valid.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Update the previous program to address strings with a preceding sign
+; (“+” or “-”). This will require including a sign, “+” or “-” in the string.
+; You must ensure the final string is NULL terminated. You may assume
+; the input strings are valid. Use the debugger to execute the program
+; and display the final results. Create a debugger input file to show
+; the results.
 
 section .data
 

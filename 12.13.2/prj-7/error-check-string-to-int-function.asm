@@ -1,18 +1,13 @@
-; Create a function to convert an ASCII string representing a number
-; into an integer.
-; The function should read the string and perform appropriate error checking.
-; If there is an error, the function should return FALSE (a defined constant
-; set to 0).
-; If the string is valid, the function should convert the string
-; into an integer.
-; If the conversion is successful, the function should return TRUE (a defined
-; constant set to 1).
-; Develop a main program to call the function on a series of different
-; integers.
+; Create a function to convert an ASCII string representing a number into
+; an integer. The function should read the string and perform appropriate error
+; checking. If there is an error, the function should return FALSE
+; (a defined constant set to 0). If the string is valid, the function should
+; convert the string into an integer. If the conversion is successful,
+; the function should return TRUE (a defined constant set to 1). Develop
+; a main program to call the function on a series of different integers.
 ; The main should include the appropriate data declarations and applicable
-; the constants.
-; Use the debugger to execute the program and display the final results.
-; Create a debugger input file to show the results.
+; the constants. Use the debugger to execute the program and display
+; the final results. Create a debugger input file to show the results.
 
 section .data
 

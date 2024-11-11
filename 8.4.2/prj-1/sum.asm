@@ -1,11 +1,12 @@
-; Implement the example program to sum a list of numbers. Use the debugger to
-; execute the program and display the final results.
-; Create a debugger input file to show the results.
+; Implement the example program to sum a list of numbers. Use the debugger
+; to execute the program and display the final results. Create a debugger
+; input file to show the results.
 
 ; *****************************************************
 ; Data declarations
 
 section     .data
+
 ; -----
 ; Define constants
 
