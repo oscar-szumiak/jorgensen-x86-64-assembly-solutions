@@ -8,5 +8,5 @@ cmd-line-args-corrected.out: cmd-line-args-corrected.asm
 	./../../asm64 cmd-line-args-corrected
 
 clean:
-	rm -v *.lst *.o *.out
+	rm *.lst *.o *.out
 

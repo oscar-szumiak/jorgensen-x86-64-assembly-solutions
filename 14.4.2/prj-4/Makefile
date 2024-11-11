@@ -8,5 +8,5 @@ stats.o: stats.asm
 	yasm -Worphan-labels -g dwarf2 -f elf64 stats.asm -l stats.lst
 
 clean:
-	rm -v *.lst *.o *.out
+	rm *.lst *.o *.out
 

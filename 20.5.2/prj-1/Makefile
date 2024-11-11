@@ -16,5 +16,5 @@ intToHex.o: intToHex.asm
 	yasm -Worphan-labels -g dwarf2 -f elf64 intToHex.asm -l intToHex.lst
 
 clean:
-	rm -v *.lst *.o *.out
+	rm *.lst *.o *.out
 

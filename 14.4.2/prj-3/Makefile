@@ -14,5 +14,5 @@ debug:
 	gdb main.out < in.gdb
 
 clean:
-	rm -v *.lst *.o *.out out.txt
+	rm *.lst *.o *.out out.txt
 

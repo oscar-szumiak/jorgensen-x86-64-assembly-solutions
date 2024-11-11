@@ -4,5 +4,5 @@ sum.out: sum.asm
 	./../../asm64 sum
 
 clean:
-	rm -v *.lst *.o *.out
+	rm *.lst *.o *.out
 
