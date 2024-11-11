@@ -5,7 +5,7 @@ main.o: main.c
 	gcc -g -Wall -c main.c
 
 stats.o: stats.asm
-	yasm -g dwarf2 -f elf64 stats.asm -l stats.lst
+	yasm -Worphan-labels -g dwarf2 -f elf64 stats.asm -l stats.lst
 
 clean:
 	rm -v *.lst *.o *.out

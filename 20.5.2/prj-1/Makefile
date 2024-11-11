@@ -7,13 +7,13 @@ idt-preview.out: intToHex.o idt-preview.o
 	ld -g -o idt-preview.out idt-preview.o intToHex.o
 
 test.o: test.asm
-	yasm -g dwarf2 -f elf64 test.asm -l test.lst
+	yasm -Worphan-labels -g dwarf2 -f elf64 test.asm -l test.lst
 
 idt-preview.o: idt-preview.asm
-	yasm -g dwarf2 -f elf64 idt-preview.asm -l idt-preview.lst
+	yasm -Worphan-labels -g dwarf2 -f elf64 idt-preview.asm -l idt-preview.lst
 
 intToHex.o: intToHex.asm
-	yasm -g dwarf2 -f elf64 intToHex.asm -l intToHex.lst
+	yasm -Worphan-labels -g dwarf2 -f elf64 intToHex.asm -l intToHex.lst
 
 clean:
 	rm -v *.lst *.o *.out
