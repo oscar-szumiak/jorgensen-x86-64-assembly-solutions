@@ -1,7 +1,7 @@
 file_name := example
 
 all:
-	./../asm64 $(file_name)
+	./asm64 $(file_name)
 
 debug:
 	gdb $(file_name).out < in.gdb
