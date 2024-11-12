@@ -1,6 +1,3 @@
-#------------------------------------
-#  Debugger Input Script
-#------------------------------------
 echo \n\n
 break _start
 break last

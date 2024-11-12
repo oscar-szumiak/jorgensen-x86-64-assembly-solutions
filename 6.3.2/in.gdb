@@ -1,6 +1,10 @@
-#------------------------------------
-#  Debugger Input Script
-#------------------------------------
+# After completing the previous problem, create a debugger input file that
+# will set the send the output to a text file, set a breakpoint, execute
+# the program, and display the results for each variable (based
+# on the appropriate variable size).  Execute the debugger and read the source
+# file. Review the input file worked correctly and that the program
+# calculations are correct based on the results shown in the output file.
+
 echo \n\n
 break last
 run
