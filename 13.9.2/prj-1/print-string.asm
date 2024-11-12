@@ -10,7 +10,7 @@
 ; and display the final results. Execute the program without the debugger
 ; and verify the appropriate output is displayed to the console.
 
-section     .data
+section .data
 
 ; Constants
 
@@ -39,19 +39,19 @@ prompt          db      "Enter text: ", LF, NULL
 errorMessage    db      "An error has occured", LF, NULL
 
 
-section     .text
+section .text
 
 ; **********************************************************
 ; Generic procedure to display a string to the screen.
 ; String must be NULL terminated.
 ; Algorithm:
-;  Count characters in string (excluding NULL)
-;  Use syscall to output characters
+;   Count characters in string (excluding NULL)
+;   Use syscall to output characters
 
 ; Arguments:
-; 1) address, string
+;   rdi - address of string
 ; Returns:
-; nothing
+;   Nothing
 
 global printString
 printString:

@@ -35,31 +35,32 @@ nFib            dq      0
 ; *******************************************************
 
 section .text
+
 global _start
 _start:
 
 ; -----
 ; Count the n-th Fibonacci number
 
-    mov ecx, dword [n]
-    dec ecx
-    mov rax, 0
-    mov rbx, 1
-    mov rdx, 0
+    mov     ecx, dword [n]
+    dec     ecx
+    mov     rax, 0
+    mov     rbx, 1
+    mov     rdx, 0
 fibLoop:
-    mov rdx, rax
-    add rdx, rbx
-    mov rax, rbx
-    mov rbx, rdx
-    loop fibLoop
+    mov     rdx, rax
+    add     rdx, rbx
+    mov     rax, rbx
+    mov     rbx, rdx
+    loop    fibLoop
 
-    mov qword [nFib], rdx
+    mov     qword [nFib], rdx
 
 ; -----
 ;  Done, terminate program.
 
 last:
-    mov rax, SYS_exit ; call code for exit
-    mov rdi, SUCCESS ; exit with success
+    mov     rax, SYS_exit       ; call code for exit
+    mov     rdi, SUCCESS        ; exit with success
     syscall
 

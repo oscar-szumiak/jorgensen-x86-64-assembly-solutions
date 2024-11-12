@@ -10,7 +10,7 @@
 ; This includes formalizing the variable names and looping constructs
 ; (many possible choices).
 
-section     .data
+section .data
 
 TRUE                equ     1
 FALSE               equ     0
@@ -45,13 +45,13 @@ msgReadError        db      "A read error has occured", LF, NULL
 msgReadErrorSize    dq      25
 
 
-section     .bss
+section .bss
 
 readBuffer      resb        READ_BUFFER_SIZE
 lineBuffer      resb        LINE_BUFFER_SIZE
 
 
-section     .text
+section .text
 
 ; myGetLine(int fd, char* lineBuffer, int lineBufferSize)
 ; Args:

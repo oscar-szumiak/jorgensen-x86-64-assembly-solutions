@@ -20,7 +20,7 @@
 ; ************************************************************
 ;  Some basic data declarations
 
-section   .data
+section .data
 
 ; -----
 ;  Define constants
@@ -60,7 +60,8 @@ qResult         dq      0
 ; ************************************************************
 ;  Code Section
 
-section     .text
+section .text
+
 global _start
 _start:
 

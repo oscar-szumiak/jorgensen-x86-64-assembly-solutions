@@ -13,11 +13,11 @@ section .text
 
 global _start
 _start:
-    xor rax, rax                    ; clear rax
-    push rax                        ; place NULLs on stack
-    mov rbx, 0x68732f6e69622f2f     ; string -> "//bin/sh"
-    push rbx                        ; put string in memory
-    mov al, 59                      ; call code in rax
-    mov rdi, rsp                    ; rdi = addr of string
-    syscall                         ; system call
+    xor     rax, rax                    ; clear rax
+    push    rax                         ; place NULLs on stack
+    mov     rbx, 0x68732f6e69622f2f     ; string -> "//bin/sh"
+    push    rbx                         ; put string in memory
+    mov     al, 59                      ; call code in rax
+    mov     rdi, rsp                    ; rdi = addr of string
+    syscall                             ; system call
 

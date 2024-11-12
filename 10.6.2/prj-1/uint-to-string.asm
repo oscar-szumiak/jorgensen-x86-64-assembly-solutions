@@ -36,6 +36,7 @@ strNum          resb    10
 ; *********************************************************
 
 section .text
+
 global _start
 _start:
 
@@ -75,7 +76,7 @@ popLoop:
 ; Done, terminate program
 
 last:
-    mov rax, SYS_exit                       ; call code for exit
-    mov rdi, EXIT_SUCCESS                   ; exit with success
+    mov     rax, SYS_exit                   ; call code for exit
+    mov     rdi, EXIT_SUCCESS               ; exit with success
     syscall
 

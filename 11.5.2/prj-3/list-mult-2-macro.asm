@@ -31,7 +31,7 @@
 ; **************************************************
 ; Data declarations
 
-section     .data
+section .data
 
 ; -----
 ; Define constants
@@ -41,7 +41,7 @@ SYS_exit        equ 60         ; code for terminate
 
 ; Define Data.
 
-section     .data
+section .data
 
 list1       dd      4, 5, 2, -3, 1
 len1        dd      5
@@ -54,7 +54,8 @@ len3        dd      9
 
 ; **************************************************
 
-section     .text
+section .text
+
 global _start
 _start:
 

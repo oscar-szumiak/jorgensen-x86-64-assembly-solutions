@@ -33,6 +33,7 @@ intNum          resd    1
 ; *********************************************************
 
 section .text
+
 global _start
 _start:
 
@@ -63,7 +64,7 @@ zeroPower:
     loop    convertionLoop
 
 last:
-    mov rax, SYS_exit                       ; call code for exit
-    mov rdi, EXIT_SUCCESS                   ; exit with success
+    mov     rax, SYS_exit                   ; call code for exit
+    mov     rdi, EXIT_SUCCESS               ; exit with success
     syscall
 

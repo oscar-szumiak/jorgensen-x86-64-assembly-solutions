@@ -51,11 +51,13 @@ intNum3         resd    1
 section .text
 
 ; Convert a signed integer to an ASCII string
+;
 ; asciiToInt(string, strlen, number)
+;
 ; Arguments:
-; string, address – rdi
-; strlen, dword value – esi
-; number, address – rdx
+;   string, address - rdi
+;   strlen, dword value - esi
+;   number, address - rdx
 
 global asciiToInt
 asciiToInt:
@@ -158,7 +160,7 @@ _start:
    mov      qword [exit3], rax
 
 last:
-    mov rdi, EXIT_SUCCESS                   ; return 0
-    mov rax, SYS_exit                       ; call code for exit
+    mov     rdi, EXIT_SUCCESS               ; return 0
+    mov     rax, SYS_exit                   ; call code for exit
     syscall
 

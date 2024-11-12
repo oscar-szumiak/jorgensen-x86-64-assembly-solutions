@@ -4,12 +4,12 @@
 ; Copyright (C) 2024 Oscar Szumiak
 ;
 
-section     .data
+section .data
 
 hexValues       db      "0123456789ABCDEF"
 
 
-section     .text
+section .text
 
 ; Convert a given number of bytes to ascii hex representation in a buffer
 ;

@@ -10,7 +10,7 @@
 ; to debug the program. Execute the program without the debugger and verify
 ; the appropriate output is displayed to the console.
 
-section     .data
+section .data
 
 LF                  equ     10
 NULL                equ     0 
@@ -27,7 +27,8 @@ newLine             db      LF, NULL
 
 ; ------------------------------------------------------
 
-section     .text
+section .text
+
 global _start
 _start:
 
@@ -37,9 +38,9 @@ _start:
 ; [rsp] = argc (argument count)
 ; [rsp+8] = argv (starting address of argument vector)
 
-    mov     rsi, qword [rsp]
-    mov     rdi, rsp
-    add     rdi, 8
+    mov     rdi, qword [rsp]
+    mov     rsi, rsp
+    add     rsi, 8
     call    printArgs
 
 exampleDone:
@@ -50,8 +51,8 @@ exampleDone:
 
 ; Print all command line arguments
 ; Arguments:
-;   rsi, qword value - argc
-;   rdi, address - argv
+;   rdi, qword value - argc
+;   rsi, address - argv
 
 global printArgs
 printArgs:
@@ -63,14 +64,14 @@ printArgs:
     mov     r13, rsi 
     mov     rbx, 0
 printLoop:
-    mov     rdi, qword [r12+rbx*8]
+    mov     rdi, qword [r13+rbx*8]
     call    printString
 
     mov     rdi, newLine
     call    printString
 
     inc     rbx
-    cmp     rbx, r13
+    cmp     rbx, r12
     jl      printLoop
 
     pop     r13
@@ -86,7 +87,7 @@ printLoop:
 ;   Count characters in string (excluding NULL)
 ;   Use syscall to output characters
 ; Arguments:
-;   1) address, string
+;   rdi - address, string
 ; Returns:
 ;   nothing
 

@@ -30,32 +30,33 @@ squareOfSum     dq      0
 ; *******************************************************
 
 section .text
+
 global _start
 _start:
 
 ; -----
 ; sum = n * (n + 1) / 2
 
-    mov eax, dword [n]
-    add eax, 1
-    mul dword [n]
-    mov ebx, 2
-    div ebx
-    mov dword [sum], eax
+    mov     eax, dword [n]
+    add     eax, 1
+    mul     dword [n]
+    mov     ebx, 2
+    div     ebx
+    mov     dword [sum], eax
 
 ; -----
 ; squareOfSum = sum * sum
 
-    mov eax, dword [sum]
-    mul eax
-    mov dword [squareOfSum], eax
-    mov dword [squareOfSum+4], edx
+    mov     eax, dword [sum]
+    mul     eax
+    mov     dword [squareOfSum], eax
+    mov     dword [squareOfSum+4], edx
 
 ; -----
 ;  Done, terminate program.
 
 last:
-    mov rax, SYS_exit ; call code for exit
-    mov rdi, SUCCESS ; exit with success
+    mov     rax, SYS_exit       ; call code for exit
+    mov     rdi, SUCCESS        ; exit with success
     syscall
 

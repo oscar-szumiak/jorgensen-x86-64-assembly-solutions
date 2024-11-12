@@ -13,7 +13,7 @@
 ; The two functions can be in the same source file. Use the debugger
 ; to execute the program and display the final results.
 
-section     .data
+section .data
 
 EXIT_SUCCESS    equ 0
 SYS_exit        equ 60 
@@ -33,7 +33,7 @@ avg2        dd      0
 extern lstSum
 extern lstAverage
 
-section     .text
+section .text
 
 global _start
 _start:

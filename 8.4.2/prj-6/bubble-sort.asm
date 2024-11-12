@@ -68,7 +68,7 @@ noSwap:
     jne     outerLoop                           ; i != 0
 
 last:
-    mov rax, SYS_exit           ; call code for exit
-    mov rdi, EXIT_SUCCESS       ; exit with success
+    mov     rax, SYS_exit           ; call code for exit
+    mov     rdi, EXIT_SUCCESS       ; exit with success
     syscall
 

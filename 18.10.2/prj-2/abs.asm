@@ -38,7 +38,7 @@
 %endmacro
 
 
-section     .data
+section .data
 
 ; -----
 ; Define constants.
@@ -52,12 +52,12 @@ SYS_exit    equ     60      ; call code for terminate
 ; Define some test variables.
 
 ; 32-bit
-dZero       dd      0.0
-dNegOne     dd      -1.0
+dZero        dd      0.0
+dNegOne      dd      -1.0
 
 ; 64-bit
-qZero       dq      0.0
-qNegOne     dq      -1.0
+qZero        dq      0.0
+qNegOne      dq      -1.0
 
 ; Test values
 
@@ -73,7 +73,7 @@ dblVal3      dq      10.00
 
 ; *********************************************************
 
-section     .text
+section .text
 
 global _start
 _start:
@@ -90,6 +90,6 @@ _start:
 ; Done, terminate program.
 
 last:
-    mov rax, SYS_exit
-    mov rbx, SUCCESS       ; exit w/success
+    mov     rax, SYS_exit
+    mov     rbx, SUCCESS       ; exit w/success
     syscall

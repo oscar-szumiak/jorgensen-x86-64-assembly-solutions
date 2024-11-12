@@ -11,7 +11,7 @@
 ; Floating-Point Example Program
 ; ***********************************************************
 
-section     .data
+section .data
 
 ; -----
 ; Define constants.
@@ -34,7 +34,7 @@ lstAve      dq  0.0
 
 ; ***********************************************************
 
-section     .text
+section .text
 
 global _start
 _start:

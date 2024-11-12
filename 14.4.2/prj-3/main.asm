@@ -13,7 +13,7 @@
 ; the program. When working, execute the program without the debugger
 ; and verify that the correct results are displayed to the console.
 
-section     .data
+section .data
 
 LF          equ     10
 NULL        equ     0
@@ -41,14 +41,14 @@ extern lstAverage
 extern intToString
 extern printString
 
-section     .bss
+section .bss
 
 sum1Ascii		resb		BUFFER_SIZE
 avg1Ascii		resb		BUFFER_SIZE
 sum2Ascii		resb		BUFFER_SIZE
 avg2Ascii		resb		BUFFER_SIZE
 
-section     .text
+section .text
 
 global _start
 _start:

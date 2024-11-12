@@ -19,7 +19,7 @@ SYS_exit        equ 60         ; code for terminate
 
 ; Define Data.
 
-section     .data
+section .data
 
 list1       dd      -3, 1, 2, 4, 5
 len1        dd      5
@@ -48,15 +48,16 @@ section .text
 ; -----
 ; HLL call:
 ; stats2(arr, len, min, med1, med2, max, sum, ave);
+;
 ; Arguments:
-; arr, address – rdi
-; len, dword value – esi
-; min, address – rdx
-; med1, address - rcx
-; med2, address - r8
-; max, address - r9
-; sum, address – stack (rbp+16)
-; ave, address – stack (rbp+24)
+;   arr, address - rdi
+;   len, dword value - esi
+;   min, address - rdx
+;   med1, address - rcx
+;   med2, address - r8
+;   max, address - r9
+;   sum, address - stack (rbp+16)
+;   ave, address - stack (rbp+24)
 
 global stats2
 stats2:

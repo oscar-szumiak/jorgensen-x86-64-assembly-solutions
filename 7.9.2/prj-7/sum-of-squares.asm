@@ -27,6 +27,7 @@ sumOfSquares    dq      0
 ; *******************************************************
 
 section .text
+
 global _start
 _start:
 
@@ -36,20 +37,20 @@ _start:
 ;   for (i=1; i<=n; i++)
 ;       sumOfSquares += i^2;
 
-    mov rbx, 1                      ; i
-    mov ecx, dword [n]
+    mov     rbx, 1                      ; i
+    mov     ecx, dword [n]
 sumLoop:
-    mov rax, rbx                    ; get i
-    mul rax                         ; i^2
-    add qword [sumOfSquares], rax
-    inc rbx
-    loop sumLoop
+    mov     rax, rbx                    ; get i
+    mul     rax                         ; i^2
+    add     qword [sumOfSquares], rax
+    inc     rbx
+    loop    sumLoop
 
 ; -----
 ;  Done, terminate program.
 
 last:
-    mov rax, SYS_exit ; call code for exit
-    mov rdi, SUCCESS ; exit with success
+    mov     rax, SYS_exit       ; call code for exit
+    mov     rdi, SUCCESS        ; exit with success
     syscall
 

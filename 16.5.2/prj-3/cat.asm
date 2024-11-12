@@ -16,7 +16,7 @@
 ; to debug the program. Execute the program without the debugger and verify
 ; the appropriate output is displayed to the console.
 
-section     .data
+section .data
 
 LF                  equ     10
 NULL                equ     0 
@@ -58,14 +58,14 @@ fileReadErrorLength     dq      21
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-section     .bss
+section .bss
 
 read_buffer       resb      BUFFER_SIZE+2
 read_size         resq      1    
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-section     .text
+section .text
 
 global _start
 _start:

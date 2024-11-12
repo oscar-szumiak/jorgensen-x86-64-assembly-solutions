@@ -52,6 +52,7 @@ inputLine       resb    STRLEN+2    ; total of 52
 section .text
 
 ; readLine(inputBuffer, bufferLength)
+;
 ; Arguments:
 ;   rdi - address of buffer for input string
 ;   rsi - length of buffer

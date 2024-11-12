@@ -43,11 +43,13 @@ strNum3          resb    10
 section .text
 
 ; Convert a signed integer to an ASCII string
+;
 ; intToAscii(number, string, maxlen)
+;
 ; Arguments:
-; number, dword value – edi
-; string, address – rsi
-; maxlen, qword value – edx
+;   number, dword value - edi
+;   string, address - rsi
+;   maxlen, qword value - edx
 
 global intToAscii
 intToAscii:
@@ -141,7 +143,7 @@ _start:
 ; Done, terminate program
 
 last:
-    mov rax, SYS_exit                       ; call code for exit
-    mov rdi, EXIT_SUCCESS                   ; exit with success
+    mov     rax, SYS_exit                   ; call code for exit
+    mov     rdi, EXIT_SUCCESS               ; exit with success
     syscall
 

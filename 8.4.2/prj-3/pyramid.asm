@@ -95,102 +95,104 @@ ddThree     dd  3
 ; Uninitialized data
 
 section .bss
+
 totalAreas      resd    50
 volumes         resd    50
 
 ; *************************************************
 
 section .text
+
 global _start
 _start:
 
 ;  Calculate volume, lateral and total surface areas
 
-    mov ecx, dword [length]         ; length counter
-    mov rsi, 0                      ; index
+    mov     ecx, dword [length]         ; length counter
+    mov     rsi, 0                      ; index
 
 calculationLoop:
 
 ; totalAreas(n) = aSides(n) * (2*aSides(n)*sSides(n))
 
-    movzx r8d, byte [aSides+rsi]        ; aSides[i]
-    movzx r9d, word [sSides+rsi*2]      ; sSides[i]
-    mov eax, r8d
-    mul dword [ddTwo]
-    mul r9d
-    mul r8d
-    mov dword [totalAreas+rsi*4], eax
+    movzx   r8d, byte [aSides+rsi]        ; aSides[i]
+    movzx   r9d, word [sSides+rsi*2]      ; sSides[i]
+    mov     eax, r8d
+    mul     dword [ddTwo]
+    mul     r9d
+    mul     r8d
+    mov     dword [totalAreas+rsi*4], eax
 
 ; volumes(n) = (aSides(n)^2 * heights(n)) / 3
 
-    movzx eax, byte [aSides+rsi]
-    mul eax
-    mul dword [heights+rsi*4]
-    div dword [ddThree]
-    mov dword [volumes+rsi*4], eax
-    inc rsi
-    loop calculationLoop
+    movzx   eax, byte [aSides+rsi]
+    mul     eax
+    mul     dword [heights+rsi*4]
+    div     dword [ddThree]
+    mov     dword [volumes+rsi*4], eax
+    inc     rsi
+    loop    calculationLoop
 
 ; -----
 ;  Find min, max, sum, and average for the total
 ;  areas and volumes.
 
-    mov eax, dword [totalAreas]
-    mov dword [taMin], eax
-    mov dword [taMax], eax
-    mov eax, dword [volumes]
-    mov dword [volMin], eax
-    mov dword [volMax], eax
-    mov dword [taSum], 0
-    mov dword [volSum], 0
-    mov ecx, dword [length]
-    mov rsi, 0
+    mov     eax, dword [totalAreas]
+    mov     dword [taMin], eax
+    mov     dword [taMax], eax
+    mov     eax, dword [volumes]
+    mov     dword [volMin], eax
+    mov     dword [volMax], eax
+    mov     dword [taSum], 0
+    mov     dword [volSum], 0
+    mov     ecx, dword [length]
+    mov     rsi, 0
 
 statsLoop:
-    mov eax, dword [totalAreas+rsi*4]
-    add dword [taSum], eax
-    cmp eax, dword [taMin]
-    jae notNewTaMin
-    mov dword [taMin], eax
+    mov     eax, dword [totalAreas+rsi*4]
+    add     dword [taSum], eax
+    cmp     eax, dword [taMin]
+    jae     notNewTaMin
+    mov     dword [taMin], eax
 
 notNewTaMin:
-    cmp eax, dword [taMax]
-    jbe notNewTaMax
-    mov dword [taMax], eax
+    cmp     eax, dword [taMax]
+    jbe     notNewTaMax
+    mov     dword [taMax], eax
 
 notNewTaMax:
-    mov eax, dword [volumes+rsi*4]
-    add dword [volSum], eax
-    cmp eax, dword [volMin]
-    jae notNewVolMin
-    mov dword [volMin], eax
+    mov     eax, dword [volumes+rsi*4]
+    add     dword [volSum], eax
+    cmp     eax, dword [volMin]
+    jae     notNewVolMin
+    mov     dword [volMin], eax
 
 notNewVolMin:
-    cmp eax, dword [volMax]
-    jbe notNewVolMax
-    mov dword [volMax], eax
+    cmp     eax, dword [volMax]
+    jbe     notNewVolMax
+    mov     dword [volMax], eax
 
 notNewVolMax:
-    inc rsi
-    loop statsLoop
+    inc     rsi
+    loop    statsLoop
 
 ; -----
 ;  Calculate averages.
 
-    mov eax, dword [taSum]
-    mov edx, 0
-    div dword [length]
-    mov dword [taAve], eax
-    mov eax, dword [volSum]
-    mov edx, 0
-    div dword [length]
-    mov dword [volAve], eax
+    mov     eax, dword [taSum]
+    mov     edx, 0
+    div     dword [length]
+    mov     dword [taAve], eax
+    mov     eax, dword [volSum]
+    mov     edx, 0
+    div     dword [length]
+    mov     dword [volAve], eax
 
 ; -----
 ;  Done, terminate program.
 
 last:
-    mov rax, SYS_exit           ; call code for exit
-    mov rdi, EXIT_SUCCESS       ; exit with success
+    mov     rax, SYS_exit           ; call code for exit
+    mov     rdi, EXIT_SUCCESS       ; exit with success
     syscall
 

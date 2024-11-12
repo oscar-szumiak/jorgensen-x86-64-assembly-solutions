@@ -32,7 +32,7 @@ SYS_exit        equ 60         ; code for terminate
 
 ; Define Data.
 
-section     .data
+section .data
 
 list1       dd      4, 5, 2, -3, 1
 len1        dd      5
@@ -69,9 +69,10 @@ std3        dd      0 ; (4 + 9 + 49 + 64) / 4 = 31 -> 5
 section .text
 
 ; selectionSort(arr, len)
+;
 ; Arguments:
-; arr, address - rdi
-; len, dword value - esi
+;   arr, address - rdi
+;   len, dword value - esi
 
 global selectionSort
 selectionSort:
@@ -108,15 +109,16 @@ noNewSmall:
     ret
 
 ; stats(arr, len, min, med1, med2, max, sum, ave);
+;
 ; Arguments:
-; arr, address – rdi
-; len, dword value – esi
-; min, address – rdx
-; med1, address - rcx
-; med2, address - r8
-; max, address - r9
-; sum, address – stack (rbp+16)
-; ave, address – stack (rbp+24)
+;   arr, address - rdi
+;   len, dword value - esi
+;   min, address - rdx
+;   med1, address - rcx
+;   med2, address - r8
+;   max, address - r9
+;   sum, address - stack (rbp+16)
+;   ave, address - stack (rbp+24)
 
 global stats
 stats:
@@ -186,10 +188,11 @@ statSumLoop:
     ret
 
 ; sqrt(num, sqrt);
+;
 ; Arguments:
-; num, dword value - edi
-; Returns:
-; sqrt, dword value - eax
+;   num, dword value - edi
+;   Returns:
+;   sqrt, dword value - eax
 
 global sqrt
 sqrt:
@@ -213,11 +216,12 @@ sqrtLoop:
     ret
 
 ; stdDev(arr, len, avg, std);
+;
 ; Arguments:
-; arr, address - rdi
-; len, dword value - esi
-; avg, dword value - edx
-; std, address - rcx
+;   arr, address - rdi
+;   len, dword value - esi
+;   avg, dword value - edx
+;   std, address - rcx
 
 global stdDev
 stdDev:

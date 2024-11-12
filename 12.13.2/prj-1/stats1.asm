@@ -12,7 +12,7 @@
 ; **************************************************
 ; Data declarations
 
-section     .data
+section .data
 
 ; -----
 ; Define constants
@@ -22,7 +22,7 @@ SYS_exit        equ 60         ; code for terminate
 
 ; Define Data.
 
-section     .data
+section .data
 
 list1       dd      4, 5, 2, -3, 1
 len1        dd      5
@@ -36,7 +36,7 @@ ave2        dd      0
 
 ; **************************************************
 
-section     .text
+section .text
 
 ; Simple example function to find and return
 ; the sum and average of an array.
@@ -45,28 +45,28 @@ section     .text
 ; stats1(arr, len, sum, ave);
 ; -----
 ; Arguments:
-; arr, address – rdi
-; len, dword value – esi
-; sum, address – rdx
-; ave, address - rcx
+;   arr, address - rdi
+;   len, dword value - esi
+;   sum, address - rdx
+;   ave, address - rcx
 
 global stats1
 stats1:
-    push    r12                     ; prologue
+    push    r12                         ; prologue
 
-    mov     r12, 0                  ; counter/index
-    mov     rax, 0                  ; running sum
+    mov     r12, 0                      ; counter/index
+    mov     rax, 0                      ; running sum
 sumLoop:
-    add eax, dword [rdi+r12*4]      ; sum += arr[i]
-    inc r12
-    cmp r12, rsi
-    jl sumLoop
+    add     eax, dword [rdi+r12*4]      ; sum += arr[i]
+    inc     r12
+    cmp     r12, rsi
+    jl      sumLoop
 
-    mov dword [rdx], eax
+    mov     dword [rdx], eax
 
     cdq
     idiv    esi
-    mov     dword [rcx], eax        ; return sum
+    mov     dword [rcx], eax            ; return sum
 
     pop     r12
     ret

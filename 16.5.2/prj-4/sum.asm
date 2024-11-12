@@ -16,7 +16,7 @@
 ; without the debugger and verify the appropriate output is displayed
 ; to the console.
 
-section     .data
+section .data
 
 LF                  equ     10
 NULL                equ     0 
@@ -48,7 +48,7 @@ newLine         db      LF, NULL
 newLineLength   dq      1
 
 
-section     .text
+section .text
 
 global _start
 _start:

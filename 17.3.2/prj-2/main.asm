@@ -11,7 +11,7 @@
 ; buffer size. Capture the program output and compare the captured output
 ; to the original file to ensure your program is correct.
 
-section     .data
+section .data
 
 LF                  equ     10
 NULL                equ     0 
@@ -42,12 +42,12 @@ fileOpenErrorLength     dq      21
 LINE_BUFFER_SIZE    equ     1024
 
 
-section     .bss
+section .bss
 
 lineBuffer      resb        LINE_BUFFER_SIZE
 
 
-section     .text
+section .text
 
 extern myGetLine
 

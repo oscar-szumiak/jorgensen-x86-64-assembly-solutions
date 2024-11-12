@@ -5,15 +5,15 @@
 ; Copyright (C) 2024		Oscar Szumiak
 ;
 
-section     .text
+section .text
 
 ; stats(arr, len, sum, ave);
 ; -----
 ; Arguments:
-; arr, address – rdi
-; len, dword value – esi
-; sum, address – rdx
-; ave, address - rcx
+;   arr, address - rdi
+;   len, dword value - esi
+;   sum, address - rdx
+;   ave, address - rcx
 
 global stats
 stats:

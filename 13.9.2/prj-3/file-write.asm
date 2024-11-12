@@ -17,7 +17,7 @@
 ; When working correctly, execute the program from the command line which
 ; will display the final results to the console.
 
-section     .data
+section .data
 
 ; Constants
 
@@ -59,15 +59,16 @@ password        db      "Hello World!", LF, NULL
 fileName        db      "password", NULL
 
 
-section     .text
+section .text
 
 ; fileWrite(string, file)
+;
 ; Arguments:
-; 1) address, password string
-; 2) address, file name
+;   rdi - address, password string
+;   rsi - address, file name
 ; Returns:
-; SUCCESS - if succesful
-; NOSUCCESS - if not able to create or write to file
+;   SUCCESS - if succesful
+;   NOSUCCESS - if not able to create or write to file
 
 global fileWrite
 fileWrite:

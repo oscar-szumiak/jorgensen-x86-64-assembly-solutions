@@ -34,7 +34,7 @@
 ; **************************************************
 ; Data declarations
 
-section     .data
+section .data
 
 ; -----
 ; Define constants
@@ -44,7 +44,7 @@ SYS_exit        equ 60         ; code for terminate
 
 ; Define Data.
 
-section     .data
+section .data
 
 list1       dd      4, 5, 2, -3, 1
 len1        dd      5
@@ -56,15 +56,16 @@ ave2        dd      0
 
 ; **************************************************
 
-section     .text
+section .text
+
 global _start
 _start:
 
 ; -----
 ; Use the macro in the program
 
-aver    list1, len1, ave1       ; 1st, data set 1
-aver    list2, len2, ave2       ; 2nd, data set 2
+    aver    list1, len1, ave1       ; 1st, data set 1
+    aver    list2, len2, ave2       ; 2nd, data set 2
 
 ; -----
 ; Done, terminate program.

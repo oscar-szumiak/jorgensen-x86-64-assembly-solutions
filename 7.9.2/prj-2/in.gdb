@@ -38,13 +38,13 @@ x/xb &bAns2
 echo bAns3 = bNum3 + bNum4 \n
 x/db &bAns3
 x/xb &bAns3
-echo bAns6 = bNum1 – bNum2 \n
+echo bAns6 = bNum1 - bNum2 \n
 x/db &bAns6
 x/xb &bAns6
-echo bAns7 = bNum1 – bNum3 \n
+echo bAns7 = bNum1 - bNum3 \n
 x/db &bAns7
 x/xb &bAns7
-echo bAns8 = bNum2 – bNum4 \n
+echo bAns8 = bNum2 - bNum4 \n
 x/db &bAns8
 x/xb &bAns8
 echo wAns11 = bNum1 * bNum3 \n

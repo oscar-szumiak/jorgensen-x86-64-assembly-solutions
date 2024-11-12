@@ -19,7 +19,7 @@
 ; if one exists. Use a text editor to verify that the line numbers track
 ; correctly in the output file.
 
-section     .data
+section .data
 
 LF                  equ     10
 NULL                equ     0 
@@ -62,13 +62,13 @@ LINE_NUMBER_BUFFER_SIZE     equ     4
 LINE_BUFFER_SIZE            equ     1024
 
 
-section     .bss
+section .bss
 
 lineNumberBuffer        resb        LINE_NUMBER_BUFFER_SIZE
 lineBuffer              resb        LINE_BUFFER_SIZE
 
 
-section     .text
+section .text
 
 extern myGetLine
 

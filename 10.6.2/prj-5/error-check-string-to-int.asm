@@ -35,6 +35,7 @@ intNum          resd    1
 ; *********************************************************
 
 section .text
+
 global _start
 _start:
 
@@ -103,6 +104,6 @@ exitFailure:
     mov     rdi, EXIT_FAILURE               ; exit with failure
 
 last:
-    mov rax, SYS_exit                       ; call code for exit
+    mov     rax, SYS_exit                   ; call code for exit
     syscall
 

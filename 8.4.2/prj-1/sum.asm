@@ -11,7 +11,7 @@
 ; *****************************************************
 ; Data declarations
 
-section     .data
+section .data
 
 ; -----
 ; Define constants
@@ -22,14 +22,16 @@ SYS_exit        equ 60      ; call code for terminate
 ; -----
 ; Define Data.
 
-section     .data
+section .data
 
 lst     dd      1002, 1004, 1006, 1008, 10010
 len     dd      5
 sum     dd      0
 
 ; ********************************************************
-section     .text
+
+section .text
+
 global _start
 _start:
 

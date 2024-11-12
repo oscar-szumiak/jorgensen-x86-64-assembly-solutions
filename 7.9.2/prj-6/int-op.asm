@@ -6,14 +6,14 @@
 
 ; Create a program to complete the following expressions using signed
 ; double-word sized variables. Note, the first letter of the variable name
-; denotes the size (d → double-word and q → quadword).
+; denotes the size (d -> double-word and q -> quadword).
 ; 
 ; 1.  dAns1 = dNum1 + dNum2
 ; 2.  dAns2 = dNum1 + dNum3
 ; 3.  dAns3 = dNum3 + dNum4
-; 4.  dAns6 = dNum1 – dNum2
-; 5.  dAns7 = dNum1 – dNum3
-; 6.  dAns8 = dNum2 – dNum4
+; 4.  dAns6 = dNum1 - dNum2
+; 5.  dAns7 = dNum1 - dNum3
+; 6.  dAns8 = dNum2 - dNum4
 ; 7.  qAns11 = dNum1 * dNum3
 ; 8.  qAns12 = dNum2 * dNum2
 ; 9.  qAns13 = dNum2 * dNum4
@@ -57,6 +57,7 @@ dRem18		dd		0
 ; *********************
 
 section .text
+
 global _start
 _start:
 
@@ -78,19 +79,19 @@ _start:
     add     eax, dword [dNum4]
     mov     dword [dAns3], eax
 
-; dAns6 = dNum1 – dNum2
+; dAns6 = dNum1 - dNum2
 
     mov     eax, dword [dNum1]
     sub     eax, dword [dNum2]
     mov     dword [dAns6], eax
 
-; dAns7 = dNum1 – dNum3
+; dAns7 = dNum1 - dNum3
 
     mov     eax, dword [dNum1]
     sub     eax, dword [dNum3]
     mov     dword [dAns7], eax
 
-; dAns8 = dNum2 – dNum4
+; dAns8 = dNum2 - dNum4
 
     mov     eax, dword [dNum2]
     sub     eax, dword [dNum4]
@@ -143,7 +144,7 @@ _start:
     mov     dword [dRem18], edx
 
 last:
-    mov rax, SYS_exit
-    mov rdi, SUCCESS
+    mov     rax, SYS_exit
+    mov     rdi, SUCCESS
     syscall
 

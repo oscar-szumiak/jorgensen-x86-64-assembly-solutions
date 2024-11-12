@@ -4,7 +4,7 @@
 ; Copyright (C) 2024 Oscar Szumiak
 ;
 
-section     .data
+section .data
 
 SYS_exit        equ     60
 SYS_write       equ     1
@@ -20,14 +20,15 @@ NULL            equ     0
 
 testData        dq      0x0123456789ABCDEF
 
-section     .bss
+
+section .bss
 
 BUFFER_SIZE     equ     40
 
 hexBuffer       resb    BUFFER_SIZE
 
 
-section     .text
+section .text
 
 extern intToHex
 

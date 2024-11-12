@@ -5,7 +5,7 @@
 ; Copyright (C) 2024		Oscar Szumiak
 ;
 
-section     .data
+section .data
 
 ; Constants
 
@@ -17,7 +17,7 @@ STDIN           equ     0           ; standard input
 STDOUT          equ     1           ; standard output
 STDERR          equ     2           ; standard error
 
-section     .text
+section .text
 
 ; printString(string)
 ; Arguments:

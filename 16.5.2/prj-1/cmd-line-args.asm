@@ -13,7 +13,7 @@
 ; Command Line Arguments Example
 ; -------------------------------------------------------
 
-section     .data
+section .data
 
 ; -----
 ; Define standard constants.
@@ -43,7 +43,8 @@ newLine             db      LF, NULL
 
 ; ------------------------------------------------------
 
-section     .text
+section .text
+
 global main
 main:
 
@@ -90,7 +91,7 @@ exampleDone:
 ;   Count characters in string (excluding NULL)
 ;   Use syscall to output characters
 ; Arguments:
-;   1) address, string
+;   rdi - address, string
 ; Returns:
 ;   nothing
 

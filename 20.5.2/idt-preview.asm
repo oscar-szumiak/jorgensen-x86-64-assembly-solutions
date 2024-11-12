@@ -10,8 +10,7 @@
 ; Use the debugger as necessary to debug the program.
 ; When working, execute the program without the debugger to display results.
 
-
-section     .data
+section .data
 
 SYS_exit        equ     60
 SYS_write       equ     1
@@ -30,7 +29,8 @@ limitSize       dq      7
 address         db      "Base address: ", NULL
 addressSize     dq      14
 
-section     .bss
+
+section .bss
 
 BUFFER_SIZE     equ     40
 
@@ -38,7 +38,7 @@ idt_data        resb    10              ; 2 (size) + 8 (start address of IDT)
 hexBuffer       resb    BUFFER_SIZE
 
 
-section     .text
+section .text
 
 extern intToHex
 
@@ -104,7 +104,7 @@ _start:
     syscall                                 ; Print hex representation
                                             ; of base address
 
-; Due to incorrect sidt readouts on Ubunut the following code fails to run
+; Due to incorrect sidt readouts on Ubuntu the following code fails to run
 
 ; printLoop:
 ;     mov     rax, r12

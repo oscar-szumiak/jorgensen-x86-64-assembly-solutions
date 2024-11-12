@@ -5,13 +5,13 @@
 ; Copyright (C) 2024		Oscar Szumiak
 ;
 
-section     .text
+section .text
 
 ; lstSum(arr, len);
 ; -----
 ; Arguments:
-;   arr, address – rdi
-;   len, dword value – esi
+;   arr, address - rdi
+;   len, dword value - esi
 ; Returns:
 ;   sum, dword value - eax
 
@@ -33,8 +33,8 @@ sumLoop:
 ; lstAverage(sum, len);
 ; -----
 ; Arguments:
-;   sum, dword value – edi
-;   len, dword value – esi
+;   sum, dword value - edi
+;   len, dword value - esi
 ; Returns:
 ;   avg, dword value - eax
 

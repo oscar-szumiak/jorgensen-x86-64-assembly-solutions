@@ -29,7 +29,7 @@
 ; on the modified program to verify that it uses less elapsed time.
 
 
-section     .data
+section .data
 
 EXIT_SUCCESS    equ     0               ; Successful operation
 SYS_exit        equ     60              ; system call code for terminate
@@ -51,14 +51,14 @@ endTime         dq      0
 elapsedTime     dq      0
 
 
-section     .bss
+section .bss
 
 BUFFER_SIZE             equ     20
 asciiNumberBuffer       resb    BUFFER_SIZE
 asciiTimeBuffer         resb    BUFFER_SIZE
 
 
-section     .text
+section .text
 
 extern  pthread_create
 extern  pthread_join

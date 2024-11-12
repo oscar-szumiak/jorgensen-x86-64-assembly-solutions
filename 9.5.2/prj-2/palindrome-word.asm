@@ -44,6 +44,7 @@ len             dd      5
 ; ****************************************************
 
 section .text
+
 global _start
 _start:
 

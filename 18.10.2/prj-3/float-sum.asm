@@ -16,7 +16,7 @@
 ; results are displayed to the console.
 
 
-section     .data
+section .data
 
 LF                      equ     10
 NULL                    equ     0
@@ -38,7 +38,7 @@ dqVal                   dq      0.1
 dqResult                dq      0.0
 dqExpectedResult        dq      1.0
 
-section     .text
+section .text
 
 global _start
 _start:
@@ -47,16 +47,16 @@ _start:
     mov     rcx, 10
 sumLoop:
     addsd   xmm0, qword [dqVal]
-    loop sumLoop
+    loop    sumLoop
 
     movsd   qword [dqResult], xmm0
     
     mov     rax, SYS_write
     mov     rdi, STDERR
 
-    ucomisd     xmm0, qword [dqExpectedResult]
-    jne         notEqual
-    jmp         equal
+    ucomisd xmm0, qword [dqExpectedResult]
+    jne     notEqual
+    jmp     equal
     
 notEqual:
     lea     rsi, byte [msg_ne]
@@ -72,7 +72,7 @@ printMsg:
     syscall
 
 last:
-    mov rax, SYS_exit
-    mov rbx, SUCCESS
+    mov     rax, SYS_exit
+    mov     rbx, SUCCESS
     syscall
 

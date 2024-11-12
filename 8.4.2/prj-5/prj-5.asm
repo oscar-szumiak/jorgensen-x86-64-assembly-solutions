@@ -63,6 +63,7 @@ div3Count   dd  0
 div3Avg     dd  0
 
 section .text
+
 global _start
 _start:
 
@@ -155,7 +156,7 @@ odd:
     mov     dword [mid], ecx
 
 last:
-    mov rax, SYS_exit           ; call code for exit
-    mov rdi, EXIT_SUCCESS       ; exit with success
+    mov     rax, SYS_exit           ; call code for exit
+    mov     rdi, EXIT_SUCCESS       ; exit with success
     syscall
 

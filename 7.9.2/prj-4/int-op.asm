@@ -6,14 +6,14 @@
 
 ; Create a program to complete the following expressions using signed word
 ; sized variables. Note, the first letter of the variable name denotes
-; the size (w → word and d → double-word).
+; the size (w -> word and d -> double-word).
 ; 
 ; 1.  wAns1 = wNum1 + wNum2
 ; 2.  wAns2 = wNum1 + wNum3
 ; 3.  wAns3 = wNum3 + wNum4
-; 4.  wAns6 = wNum1 – wNum2
-; 5.  wAns7 = wNum1 – wNum3
-; 6.  wAns8 = wNum2 – wNum4
+; 4.  wAns6 = wNum1 - wNum2
+; 5.  wAns7 = wNum1 - wNum3
+; 6.  wAns8 = wNum2 - wNum4
 ; 7.  dAns11 = wNum1 * wNum3
 ; 8.  dAns12 = wNum2 * wNum2
 ; 9.  dAns13 = wNum2 * wNum4
@@ -57,6 +57,7 @@ wRem18		dw		0
 ; *********************
 
 section .text
+
 global _start
 _start:
 
@@ -78,19 +79,19 @@ _start:
     add     ax, word [wNum4]
     mov     word [wAns3], ax
 
-; wAns6 = wNum1 – wNum2
+; wAns6 = wNum1 - wNum2
 
     mov     ax, word [wNum1]
     sub     ax, word [wNum2]
     mov     word [wAns6], ax
 
-; wAns7 = wNum1 – wNum3
+; wAns7 = wNum1 - wNum3
 
     mov     ax, word [wNum1]
     sub     ax, word [wNum3]
     mov     word [wAns7], ax
 
-; wAns8 = wNum2 – wNum4
+; wAns8 = wNum2 - wNum4
 
     mov     ax, word [wNum2]
     sub     ax, word [wNum4]
@@ -143,7 +144,7 @@ _start:
     mov     word [wRem18], dx
 
 last:
-    mov rax, SYS_exit
-    mov rdi, SUCCESS
+    mov     rax, SYS_exit
+    mov     rdi, SUCCESS
     syscall
 
