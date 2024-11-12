@@ -12,7 +12,7 @@
 
 ; Reverse a list of numbers - in place.
 ; Method: Put each number on stack, then pop each number
-; back off, and then put back into memory.
+;         back off, and then put back into memory.
 
 ; *****************************************************
 ; Data declarations

@@ -16,11 +16,12 @@ section .data
 ; -----
 ; Define constants.
 
-NULL            equ 0   ; end of string
+NULL            equ 0       ; end of string
 TRUE            equ 1
 FALSE           equ 0
-EXIT_SUCCESS    equ 0   ; Successful operation
-SYS_exit        equ 60  ; system call code for terminate
+
+EXIT_SUCCESS    equ 0       ; Successful operation
+SYS_exit        equ 60      ; system call code for terminate
 
 ; -----
 

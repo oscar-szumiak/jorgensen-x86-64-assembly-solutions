@@ -12,24 +12,28 @@
 
 section .data
 
-EXIT_SUCCESS    equ 0
-SYS_exit        equ 60 
+EXIT_SUCCESS    equ     0
+SYS_exit        equ     60
 
-list1       dd      4, 5, 2, -3, 1
-len1        dd      5
-sum1        dd      0
-ave1        dd      0
+list1           dd      4, 5, 2, -3, 1
+len1            dd      5
 
-list2       dd      2, 6, 3, -2, 1, 8, 19
-len2        dd      7
-sum2        dd      0
-ave2        dd      0
+list2           dd      2, 6, 3, -2, 1, 8, 19
+len2            dd      7
+
+section .bss
+
+sum1            resd    1
+avg1            resd    1
+
+sum2            resd    1
+avg2            resd    1
 
 ; **************************************************
 
-extern stats
-
 section .text
+
+extern stats
 
 global _start
 _start:
@@ -39,7 +43,7 @@ _start:
     mov     rdi, list1
     mov     esi, dword [len1]
     mov     rdx, sum1
-    mov     rcx, ave1
+    mov     rcx, avg1
     call    stats
 
 ; Call function stats for list1
@@ -47,7 +51,7 @@ _start:
     mov     rdi, list2
     mov     esi, dword [len2]
     mov     rdx, sum2
-    mov     rcx, ave2
+    mov     rcx, avg2
     call    stats
 
 ; -----

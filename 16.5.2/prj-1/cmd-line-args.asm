@@ -18,10 +18,10 @@ section .data
 ; -----
 ; Define standard constants.
 
-LF                  equ     10
-NULL                equ     0 
-TRUE                equ     1       ; line feed
-FALSE               equ     0       ; end of string
+LF                  equ     10      ; line feed
+NULL                equ     0       ; end of string
+TRUE                equ     1
+FALSE               equ     0
 EXIT_SUCCESS        equ     0       ; success code
 STDIN               equ     0       ; standard input
 STDOUT              equ     1       ; standard output
@@ -51,8 +51,8 @@ main:
 ; -----
 ; Get command line arguments and echo to screen.
 ; Based on the standard calling convention,
-; rdi = argc (argument count)
-; rsi = argv (starting address of argument vector)
+;   rdi = argc (argument count)
+;   rsi = argv (starting address of argument vector)
 
     mov     r12, rdi        ; save for later use...
     mov     r13, rsi

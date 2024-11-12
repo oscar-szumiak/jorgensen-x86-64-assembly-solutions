@@ -8,6 +8,9 @@
 ; to execute the program and display the final results. Create a debugger
 ; input file to show the results.
 
+; Simple example to the sum and average for
+; a list of numbers.
+
 ; *****************************************************
 ; Data declarations
 
