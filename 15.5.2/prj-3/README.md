@@ -1,25 +1,17 @@
-# Notes
+# Project notes
 
-## Print register as hex
+## Stack based code execution
 
-Easy reading and entering of relative address based on rsp.
+By default on modern Linux systems trying to run code in data segments (stack, heap etc.) causes a segmentation fault due to the NX (no-execute) bit in ELF executables. NX-bit protection can be disabled for specific binaries with the 'execstack' program.
 
-## Print input as hex
+## Injection code (shellcode) issues
 
-For verification of correct input.
+The injection code given in the book works when called directly but fails when called from within a function. This is due to the values of rsi and rdx being set to incorrect values for the execve system call. In the modified code these two registers are set to zero.
 
-## Scripted exploit
+## Potential ideas useful for testing code injection
 
-Figure out whether it is possible to script the exploit:
-
-1. Feed injectionCode.hex as input into program
-2. Read value of rsp, calculate offset and input it overwriting rip
-
-## Check if exploit works
-
-Write version that explicitly injects the exploit code into the stack and overwrites the rip value.
-
-## Check if exploit would work without function call
-
-Implement same procedure without any function call.
+- [X] - direct injection (preinjected-code.asm)
+- [X] - print rsp in hex before user input
+- [ ] - print entered input as hex for verification
+- [ ] - scripted input stack buffer overflow (via expect)
 

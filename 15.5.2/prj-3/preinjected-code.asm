@@ -48,17 +48,6 @@ injectionLoop:                      ; Inject code
     cmp     rbx, qword [injectionCodeLength]
     jb      injectionLoop
 
-    ; 8-byte offset of return address (rip) correct according to SYSV-ABI
-    ; https://refspecs.linuxfoundation.org/elf/x86_64-abi-0.99.pdf
-    ; Low Level System Information -> Function Calling Sequence ->
-    ; -> Figure 3.3: Stack Frame with Base Pointer
-
-    ; By default on modern Linux causes segmentation fault
-    ; due to NX (no-execute) bit protection (prevents execution
-    ; of code in data segments: stack, heap)
-    ; ELF executable stack protection can be disabled for specific binaries
-    ; with 'execstack' program
-
     mov     qword [rbp+8], rsp     ; Move start location of injected code
                                    ; into rip
 
