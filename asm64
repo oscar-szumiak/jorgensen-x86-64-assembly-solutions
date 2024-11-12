@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Create and assemble the link script file, as described in Chapter 5,
+# Tool Chain. Use the script to assemble and link the program.
+# Ensure that the script correctly assembles and links.
+
 # Simple assemble/link script.
 if [ -z $1 ]; then 
     echo "Usage:  ./asm64 <asmMainFile> (no extension)" 
@@ -16,3 +20,4 @@ fi
 # Compile, assemble, and link. 
 yasm -Worphan-labels -g dwarf2 -f elf64 $1.asm -l $1.lst 
 ld -g -o $1.out $1.o
+
