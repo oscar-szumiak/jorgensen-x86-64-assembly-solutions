@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
+# Compare files from $INPUT_DIR and $OUTPUT_DIR
+
 INPUT_DIR="$1"
 OUTPUT_DIR="$2"
 
