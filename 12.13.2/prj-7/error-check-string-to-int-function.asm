@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a function to convert an ASCII string representing a number into
 ; an integer. The function should read the string and perform appropriate error
 ; checking. If there is an error, the function should return FALSE

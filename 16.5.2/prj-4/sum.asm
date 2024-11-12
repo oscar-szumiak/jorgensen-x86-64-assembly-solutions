@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create an assembly language program that will accept three unsigned integer
 ; numbers from the command line, add the three numbers, and display each
 ; of the three original numbers and the sum. If too many or too few command

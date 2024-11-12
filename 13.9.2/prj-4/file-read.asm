@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Based on the file read example, create a value returning fileRead()
 ; function to read a password from a file. The function should accept
 ; arguments for the address of file name, the address of where to store

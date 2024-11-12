@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022   Ed Jorgensen
+; Copyright (C) 2024        Oscar Szumiak
+;
+
 ; Create a program to compute the square of the sum from 1 to n.
 ; Specifically, compute the sum of integers from 1 to n and then square
 ; the value. Use the debugger to execute the program and display the final

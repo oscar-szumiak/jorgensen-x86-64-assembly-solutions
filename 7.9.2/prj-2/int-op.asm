@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program to compute the following expressions using signed byte
 ; variables and signed operations. Note, the first letter of the variable name
 ; denotes the size (b → byte and w → word).

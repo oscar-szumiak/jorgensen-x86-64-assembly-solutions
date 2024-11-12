@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Implement the example program to convert an integer into a string.
 ; Change the original integer to a different value.
 ; Use the debugger to execute the program and display the final results.

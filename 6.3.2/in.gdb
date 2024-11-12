@@ -1,3 +1,9 @@
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
 # After completing the previous problem, create a debugger input file that
 # will set the send the output to a text file, set a breakpoint, execute
 # the program, and display the results for each variable (based
@@ -37,3 +43,4 @@ x/dg &qResult
 echo \n\n
 set logging off
 quit
+

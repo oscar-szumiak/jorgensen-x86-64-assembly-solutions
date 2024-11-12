@@ -1,3 +1,9 @@
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
 echo \n\n
 break funStart
 break funEnd
@@ -23,3 +29,4 @@ x/8xg $rsp
 echo \n\n
 set logging off
 quit
+

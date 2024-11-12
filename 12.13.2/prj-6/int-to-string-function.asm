@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Convert the integer to ASCII macro from the previous chapter into
 ; a void function. The function should convert a signed integer into
 ; a right-justified string of a given length. This will require including

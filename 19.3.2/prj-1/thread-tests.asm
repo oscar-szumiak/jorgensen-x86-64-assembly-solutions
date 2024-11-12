@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Implement the outlined example program and create two thread functions
 ; where each thread function computes the formula MAX/2 times.
 ; Set MAX to 1,000,000,000 (one billion).

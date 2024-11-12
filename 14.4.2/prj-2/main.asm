@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Based on the example function stats(), split it into two value returning
 ; functions, lstSum() and lstAverage(). As noted in Chapter 12, Functions,
 ; value returning functions return their result in the A register.

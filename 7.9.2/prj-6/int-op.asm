@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program to complete the following expressions using signed
 ; double-word sized variables. Note, the first letter of the variable name
 ; denotes the size (d → double-word and q → quadword).

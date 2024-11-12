@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Implement the example program to compute the lateral total surface area
 ; (including the base) and volume of each square pyramid in a set of square
 ; pyramids. Once the values are computed, the program finds the minimum,

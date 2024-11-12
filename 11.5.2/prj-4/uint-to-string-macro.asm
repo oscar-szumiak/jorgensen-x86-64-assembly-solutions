@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022   Ed Jorgensen
+; Copyright (C) 2024        Oscar Szumiak
+;
+
 ; Create a macro from the integer to ASCII conversion example from
 ; the previous chapter. Invoke the macro at least three times of three
 ; different data sets. Use the debugger to execute the program and display

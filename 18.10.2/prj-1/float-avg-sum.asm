@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Implement the example program to find the sum and average for a list
 ; of floating-point values. Use the debugger to execute the program
 ; and verify the final results.

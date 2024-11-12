@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Implement the second example program fragment to open a new shell.
 ; Use the debugger to execute the program and display the final results.
 ; Execute the program without the debugger and verify that a new shell

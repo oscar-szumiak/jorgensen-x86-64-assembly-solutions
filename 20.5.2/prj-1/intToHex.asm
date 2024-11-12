@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 section     .data
 
 hexValues       db      "0123456789ABCDEF"

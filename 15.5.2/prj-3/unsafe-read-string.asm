@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Using the program from the previous question and the program fragment
 ; to open a shell, attempt to inject the code into the running program.
 ; In order to save time, print the value of the rsp at an appropriate

@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022   Ed Jorgensen
+; Copyright (C) 2024        Oscar Szumiak
+;
+
 ; Update the example program to address signed integers. This will require
 ; including a preceding sign, “+” or “-” in the string. For example,
 ; -123 10 (0xFFFFFF85) would be “-123” with a NULL termination

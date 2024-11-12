@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Extend the previous exercise to display the sum and average to the console.
 ; The printString() example function (from multiple previous examples) should
 ; be placed in a third source file (which can be used on other exercises).

@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program to determine if a NULL terminated string representing
 ; a word is a palindrome.
 ; A palindrome is a word that reads the same forward or backwards.

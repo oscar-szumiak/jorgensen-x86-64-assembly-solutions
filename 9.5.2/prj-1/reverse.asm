@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Implement the example program to reverse a list of numbers.
 ; Use the debugger to execute the program and display the final results.
 ; Create a debugger input file to show the results.

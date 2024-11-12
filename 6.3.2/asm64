@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2015-2022 Ed Jorgensen
+#
+
 # Create and assemble the link script file, as described in Chapter 5,
 # Tool Chain. Use the script to assemble and link the program.
 # Ensure that the script correctly assembles and links.

@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program that will read two file names from the command line,
 ; read lines from the first file, add line numbers, and write the modified
 ; line (with the line number) to the second file. For example, your add lines

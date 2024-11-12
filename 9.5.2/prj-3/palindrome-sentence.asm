@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Update the previous program to test if a phrase is a palindrome.
 ; The general approach using the stack is the same, however,
 ; spaces and punctuation must be skipped.

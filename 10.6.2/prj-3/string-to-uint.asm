@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program to convert a string representing a numeric value into
 ; an integer. For example, given the NULL terminated string “41275”
 ; (a total of 6 bytes), convert the string into a double-word sized integer

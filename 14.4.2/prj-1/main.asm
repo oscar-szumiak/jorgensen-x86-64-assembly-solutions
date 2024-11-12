@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Implement the assembly language example program to find the sum and average
 ; for a list of signed integers. Ensure that the main and function
 ; are in different source files. Use the debugger to execute the program

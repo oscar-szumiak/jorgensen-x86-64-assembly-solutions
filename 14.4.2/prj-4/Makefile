@@ -1,3 +1,9 @@
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
 all: main.o stats.o
 	gcc -g -no-pie -o main.out main.o stats.o
 

@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a program to iteratively find the nth Fibonacci number.
 ; The value for n should be set as a parameter (e.g., a programmer defined
 ; constant).

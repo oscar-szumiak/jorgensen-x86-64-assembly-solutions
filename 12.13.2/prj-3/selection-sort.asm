@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a main program and a function that will sort a list of numbers
 ; in ascending order. Use the following selection sort algorithm:
 ; 

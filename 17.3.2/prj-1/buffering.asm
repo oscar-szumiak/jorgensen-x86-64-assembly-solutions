@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Refine the presented algorithm to address maximum text line check
 ; and possibility that the file size is an even multiple of the buffer size.
 ; This includes formalizing the variable names and looping constructs

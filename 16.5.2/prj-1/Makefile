@@ -1,3 +1,9 @@
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
 all: cmd-line-args.out cmd-line-args-corrected.out
 
 cmd-line-args.out: cmd-line-args.asm

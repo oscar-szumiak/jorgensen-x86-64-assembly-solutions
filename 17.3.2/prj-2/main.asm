@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a simple main program that will test the myGetLine() function
 ; by opening a file, calling the myGetLine() function, and displaying
 ; the lines to the console.  Test the program with a series of different

@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022   Ed Jorgensen
+; Copyright (C) 2024        Oscar Szumiak
+;
+
 ; Update the example program from the previous question to find the maximum,
 ; minimum, and average for the list of numbers. Use the debugger to execute
 ; the program and display the final results. Create a debugger input file

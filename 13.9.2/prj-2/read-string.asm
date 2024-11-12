@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Convert the example program to read input from keyboard into a readString()
 ; function. The function should accept arguments for the string address
 ; and maximum string length (in that order). The maximum length should include

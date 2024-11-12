@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Implement a program to perform the summation:
 ; 
 ; sum (i = 1 to 10) 0.1

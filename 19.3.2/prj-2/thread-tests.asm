@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Update the program from the previous question to resolve the race condition.
 ; Use the debugger as necessary to debug the program. One very simple
 ; way to accomplish this is to use temporary variables for each thread

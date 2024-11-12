@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Update the previous program to address strings with a preceding sign
 ; (“+” or “-”). This will require including a sign, “+” or “-” in the string.
 ; You must ensure the final string is NULL terminated. You may assume

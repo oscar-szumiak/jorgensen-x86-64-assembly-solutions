@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create a macro to update an existing list by multiplying every element by 2.
 ; Invoke the macro at least three times of three different data sets.
 ; Use the debugger to execute the program and display the final results.

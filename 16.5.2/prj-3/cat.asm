@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Create an assembly language program to accept a file name on the command
 ; line and open the file and display the one line message contained
 ; in the file. A series of small text file should be created each containing

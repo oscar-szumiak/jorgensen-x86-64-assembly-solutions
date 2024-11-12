@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Update the previous program to convert strings into integers to include
 ; error checking on the input string. Specifically, the sign must be valid
 ; and be the first character in the string, each digit must be between

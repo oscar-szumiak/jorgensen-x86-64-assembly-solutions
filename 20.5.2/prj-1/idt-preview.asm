@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2024 Oscar Szumiak
+;
+
 ; Write a program to obtain and list the contents of the IDT.
 ; This will require an integer to ASCII/Hex program in order to display
 ; the applicable addresses in hex.

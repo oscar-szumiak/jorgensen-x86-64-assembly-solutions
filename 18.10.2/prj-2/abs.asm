@@ -1,3 +1,10 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022	Ed Jorgensen
+; Copyright (C) 2024		Oscar Szumiak
+;
+
 ; Implement the floating-point absolute value function as two macros,
 ; one fAbsf for 32-bit floating-point values and fAbsd for 64-bit
 ; floating-point values.  Create a simple main program that uses each

@@ -1,3 +1,9 @@
+;
+; SPDX-License-Identifier: CC-BY-NC-SA-4.0
+;
+; Copyright (C) 2015-2022 Ed Jorgensen
+;
+
 ; Type in the example program from Chapter 4, Program Format.
 ; Assemble and link the program as described in Chapter 5, Tool Chain.
 ; Execute the debugger as noted in this chapter. Set a breakpoint

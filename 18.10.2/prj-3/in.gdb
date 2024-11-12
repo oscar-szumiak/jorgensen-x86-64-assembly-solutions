@@ -1,3 +1,9 @@
+#
+# SPDX-License-Identifier: CC-BY-NC-SA-4.0
+#
+# Copyright (C) 2024 Oscar Szumiak
+#
+
 echo \n\n
 break _start
 break last
@@ -15,3 +21,4 @@ x/fg &dqExpectedResult
 echo \n\n
 set logging off
 quit
+
